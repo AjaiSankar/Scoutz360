@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/Profile/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>My Portfolio</h1>
+    </div>
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="../Images/vivek.jpg" alt="Profile Picture" width="200">
+        </div>
+        <div class="profile-name">
+            Vivekananad R
+            <br>
+            Footballer
+        </div>
+        <nav class="navbar">
+            <a href="#" class="navbar-logo">Vivek17</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item" ac><a href="/Profile/index.html" class="navbar-link">My Profile</a></li>
+                <li class="navbar-item"><a href="/Profile/photos.html" class="navbar-link">Photos</a></li>
+                <li class="navbar-item"><a href="/Profile/videos.html" class="navbar-link">Videos</a></li>
+            </ul>
+        </nav>
+        <div class="profile-card">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus justo quis neque gravida, nec varius urna gravida. Fusce id arcu id orci lacinia elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque bibendum est sit amet tristique interdum. Nullam sed finibus tortor, ut vulputate dolor. Integer eget felis sit amet metus vulputate rhoncus a id erat. Integer semper dolor urna, vel hendrerit enim venenatis ac.</p>
+        </div>
+        <div class="profile-card">
+            <h2>Experience</h2>
+            <ul>
+                <li>Software Engineer at ABC Company</li>
+                <li>Web Developer at XYZ Agency</li>
+            </ul>
+        </div>
+        <div class="profile-card">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Received Employee of the Year award in 2020</li>
+                <li>Published a research paper on AI</li>
+            </ul>
+        </div>
+    </div>
+    <div class="chat-button">Chat</div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>Chat</span>
+            <span class="chat-close">X</span>
+        </div>
+        <div class="chat-conversations">
+            <div class="chat-conversation">
+                <p class="chat-person">Person 1</p>
+                <p class="chat-message">Chat message 1</p>
+            </div>
+            <div class="chat-conversation">
+                <p class="chat-person">Person 2</p>
+                <p class="chat-message">Chat message 2</p>
+            </div>
+            <!-- Add more chat conversations here -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="Type your message...">
+            <button class="chat-submit">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Chat functionality here
+
+        const chatButton = document.querySelector('.chat-button');
+        const chatContainer = document.querySelector('.chat-container');
+        const chatClose = document.querySelector('.chat-close');
+
+        // Open chat container when chat button is clicked
+        chatButton.addEventListener('click', () => {
+            chatContainer.style.display = 'block';
+        });
+
+        // Close chat container when close button is clicked
+        chatClose.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+        });
+        
+    </script>
+</body>
+</html
