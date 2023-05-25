@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    .profile-card {
+      background-color: #0f4c75;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: -1;
+    }
+
+    .profile-card img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 5px solid #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-card h2 {
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-card p {
+      margin: 5px 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .profile-card-divider {
+      width: 80%;
+      height: 2px;
+      background-color: #fff;
+      margin: 20px 0;
+    }
+
+    .profile-card-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .profile-card-icons i {
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .profile-card-icons i:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <img src="/Images/vivek.jpg" alt="Profile Photo">
+    <h2>Name</h2>
+    <p>Sport</p>
+    <p>Age</p>
+    <p>Position/Batsman/Bowler</p>
+    <div class="profile-card-divider"></div>
+    <div class="profile-card-icons">
+      <i class="fas fa-futbol"></i>
+      <p>Proud Member of Scout360</p>
+      <a href="#" id="download-btn" download="">Download and Share</a>
+    </div>
+  </div>
+
+  <script>
+    // Handle download event
+    const downloadButton = document.getElementById('download-btn');
+    downloadButton.addEventListener('click', () => {
+      const profileCard = document.querySelector('.profile-card');
+      html2canvas(profileCard).then(canvas => {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = canvas.toDataURL('image/jpeg');
+        downloadLink.download = 'profile-card.jpg';
+        downloadLink.click();
+      });
+    });
+  </script>
+</body>
+</html>
