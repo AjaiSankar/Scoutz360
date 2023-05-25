@@ -6,14 +6,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(2, 54, 78);
-    background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+    background: linear-gradient(90deg, rgba(2,54,78,1) 0%, rgb(13, 176, 138) 73%);
+    font-family: Arial, sans-serif;
 }
 
 .content {
     color: white;
     text-align: center;
     margin-bottom: 50px;
+    
 }
 
 .animated-text {
@@ -23,18 +24,37 @@ body {
 }
 
 .login-form {
+  
+  text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     background: white;
-    padding: 50px;
+    padding: 20px;
     border-radius: 5px;
+    border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ background: rgba(255,255,255,0.6);
+}
+.login-form h1{
+  margin-bottom: 15px;
+  text-align: center;
+  color: rgb(2,54,78);
+  font-size: 24px;
 }
 
 .login-form input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 10px;
+  width: calc(100% - 40px);
+  padding: 15px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
-
+.login-form form{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 @keyframes animateText {
     0% { opacity: 0; transform: translateY(-20px); }
     50% { opacity: 1; transform: translateY(0); }
@@ -52,7 +72,7 @@ body {
     }
 }
 
-/*----------------------Button Start-------------------*/
+
 
 .glow-on-hover {
     width: 220px;
@@ -114,13 +134,3 @@ body {
     100% { background-position: 0 0; }
   }
 
-.glow-on-hover login-form{
-    width: 100%;
-    padding: 10px;
-    background: #2CA8A2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-/*----------------------Button Ends-------------------*/
