@@ -36,7 +36,7 @@ document.getElementById("login").addEventListener("click", function (event) {
         window.location.href = "./test/index.html";
       }
       else{
-        console.log("Login Successfull!!")
+        window.location.href = "./Feed/index.html";
       }
     })
     .catch((error) => {
@@ -92,22 +92,7 @@ document.getElementById("register").addEventListener("click", async function (ev
 
   // Additional validation or form submission logic can be added here
 });
-// document.getElementById("forget").addEventListener("click", function (event) {
-//   event.preventDefault();
-//   var email = document.getElementById("emailForget").value;
-//   if (!validateEmail(email)) {
-//     return;
-//   }
-//   // Send password reset email
-//   sendPasswordResetEmail(auth, email)
-//     .then(() => {
-//       alert("Password reset email sent!");
-//     })
-//     .catch((error) => {
-//       alert("Error sending password reset email:", error);
-//     });
 
-// });
 
 function validatePassword(password1, password2) {
   if (password1 === password2) {
