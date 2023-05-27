@@ -32,11 +32,13 @@ document.getElementById("login").addEventListener("click", function (event) {
       //alert(user.email + " Login successful!");
       // Redirect to the desired page
       //window.location.href = "./student/index.html";
+      sessionStorage.setItem("uid", user.uid);
       if(user.uid=='5w3QtqWjjSOazqmwX7teQEEPB6k2'){
         window.location.href = "./test/index.html";
       }
       else{
-        console.log("Login Successfull!!")
+        window.location.href = "./Feed/index.html";
+        console.log(user.uid)
       }
     })
     .catch((error) => {
@@ -46,74 +48,3 @@ document.getElementById("login").addEventListener("click", function (event) {
       alert(errorMessage);
     });
 });
-// For new registration
-document.getElementById("register").addEventListener("click", async function (event) {
-  event.preventDefault(); // Prevent form submission
-  var email = document.getElementById("email").value;
-  var password1 = document.getElementById("password").value;
-  var name = document.getElementById("name").value;
-//   var department = document.getElementById("departmentRegister").value;
-//   var phno = document.getElementById("phnoRegister").value;
-  var password2 = document.getElementById("confirmPassword").value;
-  
-  if (!validatePassword(password1, password2)) {
-    return; // Prevent form submission
-  }
-  createUserWithEmailAndPassword(auth, email, password1)
-    .then(async (userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      console.log(user);
-      alert("Registration successfully!!");
-      try {
-        const collectionRef = collection(db, "user");
-        const docRef = await addDoc(collectionRef, {
-          UserId: user.uid,
-          Name: name,
-        //   Phno: phno,
-        //   Dept: department
-        });
-        console.log("Document written with ID: ", docRef.id);
-        //alert("Form submitted");
-        location.reload();
-      } catch (error) {
-        console.error(error);
-        alert("Error adding document");
-      }
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorMessage);
-      alert(error);
-
-    });
-
-  // Additional validation or form submission logic can be added here
-});
-// document.getElementById("forget").addEventListener("click", function (event) {
-//   event.preventDefault();
-//   var email = document.getElementById("emailForget").value;
-//   if (!validateEmail(email)) {
-//     return;
-//   }
-//   // Send password reset email
-//   sendPasswordResetEmail(auth, email)
-//     .then(() => {
-//       alert("Password reset email sent!");
-//     })
-//     .catch((error) => {
-//       alert("Error sending password reset email:", error);
-//     });
-
-// });
-
-function validatePassword(password1, password2) {
-  if (password1 === password2) {
-    return true; // Passwords match
-  } else {
-    alert("Password does not match the confirmation.");
-    return false; // Passwords do not match
-  }
-}

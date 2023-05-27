@@ -2,8 +2,8 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebas
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js'
 import { getFirestore, collection, getDocs, addDoc, where, query, doc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-//import { getFirestore, collection, getDocs, addDoc,where ,query,doc,update} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 import { getStorage, ref, getDownloadURL, uploadBytes} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js';
+
 const firebaseConfig = {
     apiKey: "AIzaSyDIh1tbO5WYQOsC5J0eCT3gMLqf9TA5M8Q",
     authDomain: "scoutz360demo.firebaseapp.com",
@@ -28,9 +28,9 @@ var form = document.getElementById('tournament-form');
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
 
-    // var tournamentId = collection(db,'hosttournamentclubs').doc().id;
     // Get form values
     var tournamentName = document.getElementById('tournament-name').value;
+    var tournamentSport = document.getElementById('tournament-sport').value;
     var hostName = document.getElementById('host-name').value;
     var place = document.getElementById('place').value;
     var date = document.getElementById('date').value;
@@ -42,8 +42,8 @@ form.addEventListener('submit', function(event) {
 
     // Create a new document in Firestore
     addDoc(collection(db, 'hosttournamentclubs'),{
-    //collection(db,'hosttournamentclubs').add({
         tournamentName: tournamentName,
+        tournamentSport: tournamentSport,
         hostName: hostName,
         place: place,
         date: date,
