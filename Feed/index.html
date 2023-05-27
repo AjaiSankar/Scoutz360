@@ -6,9 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link href="styleindex.css" rel="stylesheet">
-</head>
-    <title>Scoutz360-Tournaments</title>
+  <title>Scoutz360-Feed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    
+    .post {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    
+    .post img {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .post video {
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: relative;
@@ -39,25 +72,31 @@
           </div>
         </div>
     </nav>
-    <video id="background-video" autoplay muted loop>
-        <source src="../Images/bg.mp4" type="video/mp4">
-    </video>
-    <div class="container">
-        <h1>TOURNAMENTS</h1>
-        <br>
-      <span>
-        <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Find/tournaments.html';" style="left: -130px">
-          FIND TOURNAMENTS!
-      </button>
-      
-           
-      <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Host/host.html';" style="left: 130px">
-        HOST TOURNAMENT!
-    </button>
-    
-
-      </span>
+  <header>
+    <h1>Scoutz360 Feed</h1>
+  </header>
+  
+  <main>
+    <div class="post">
+      <h2>Ajai</h2>
+      <img src="/Images/playerimg1.jpg" alt="Player A">
+      <p>Playing for Kerala in Under 23 Football 7s Championship hld at Trivandum</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <div class="post">
+      <h2>Vivek</h2>
+      <video controls>
+        <source src="/Images/playing1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Playing for Tigers football club in national football Tournament</p>
+    </div>
+    
+    <div class="post">
+      <h2>Ronaldo</h2>
+      <img src="/Images/playerimg1.jpg" alt="Player C">
+      <p>Under 20 Footbal Championship @ Brazil</p>
+    </div>
+  </main>
 </body>
 </html>
