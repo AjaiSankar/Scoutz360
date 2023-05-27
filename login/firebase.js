@@ -32,11 +32,13 @@ document.getElementById("login").addEventListener("click", function (event) {
       //alert(user.email + " Login successful!");
       // Redirect to the desired page
       //window.location.href = "./student/index.html";
+      sessionStorage.setItem("uid", user.uid);
       if(user.uid=='5w3QtqWjjSOazqmwX7teQEEPB6k2'){
         window.location.href = "./test/index.html";
       }
       else{
         window.location.href = "./Feed/index.html";
+        console.log(user.uid)
       }
     })
     .catch((error) => {
