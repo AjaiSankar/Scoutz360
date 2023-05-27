@@ -19,36 +19,42 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage(app);
-console.log(user.uid)
-document.getElementById("getimage").addEventListener('click', function(event) {
-    event.preventDefault();
-    var fileInput = document.getElementById("fileInput");
-    var file = fileInput.files[0];
-    var storageRef = ref(storage, "Files/" + file.name);
-  
-    // Upload file to Firebase Storage
-    var uploadTask = uploadBytes(storageRef, file);
-  
-    uploadTask
-        .then(function(snapshot) {
-            // Upload successful
-            console.log("Upload successful!");
-    
-            // Get the uploaded image URL
-            return getDownloadURL(snapshot.ref);
-        })
-        .then(function(downloadURL) {
-            // Save the image URL in the Firebase Realtime Database
-            return addDoc(collection(db, "images"), {
-                imageUrl: downloadURL,
-                userid: user.uid
-            });
-        })
-        .then(function() {
-            console.log("Image URL saved in database!");
-        })
-        .catch(function(error) {
-            // Handle any errors that occurred during upload or saving the URL
-            console.error("Error: ", error);
+
+auth.onAuthStateChanged(async function (user) {
+    if (user) 
+    {
+        console.log(user.uid)
+        document.getElementById("getimage").addEventListener('click', function(event) {
+            event.preventDefault();
+            var fileInput = document.getElementById("fileInput");
+            var file = fileInput.files[0];
+            var storageRef = ref(storage, "Files/" + file.name);
+          
+            // Upload file to Firebase Storage
+            var uploadTask = uploadBytes(storageRef, file);
+          
+            uploadTask
+                .then(function(snapshot) {
+                    // Upload successful
+                    console.log("Upload successful!");
+            
+                    // Get the uploaded image URL
+                    return getDownloadURL(snapshot.ref);
+                })
+                .then(function(downloadURL) {
+                    // Save the image URL in the Firebase Realtime Database
+                    return addDoc(collection(db, "images"), {
+                        imageUrl: downloadURL,
+                        userid: user.uid
+                    });
+                })
+                .then(function() {
+                    console.log("Image URL saved in database!");
+                })
+                .catch(function(error) {
+                    // Handle any errors that occurred during upload or saving the URL
+                    console.error("Error: ", error);
+                });
         });
+    }
 });

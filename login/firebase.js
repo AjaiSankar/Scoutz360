@@ -19,6 +19,7 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
 console.log(app)
+
 document.getElementById("login").addEventListener("click", function (event) {
   event.preventDefault(); // Prevent form submission
   var email = document.getElementById("emaillogin").value;
