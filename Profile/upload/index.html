@@ -32,9 +32,13 @@
           <li class="nav-item">
               <a class="nav-link" href="#">Academies</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">My Profile</a>
+          </li>
         </ul>
         <span class="navbar-text">
-          <button>Login</button>
+          <button>Logout
+          </button>
         </span>
       </div>
     </div>
@@ -49,14 +53,15 @@
         </div>
         <div class="form-group">
             <label for="media">Upload photo/video:</label>
-            <input type="file" id="media" name="media" accept="image/*, video/*">
+            <input type="file" id="fileInput" name="media" accept="image/*, video/*">
         </div>
         <div>
-            <button class="glow-on-hover" type="button" onclick="window.location.href='#';" style="left: 150px">
+            <button class="glow-on-hover" type="button" id="getimage" style="left: 150px">
                 Upload
             </button>
         </div>
     </form>
 </div>
 </body>
+<script type="module" src="./upload.js"></script>
 </html>

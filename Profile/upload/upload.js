@@ -29,6 +29,8 @@ auth.onAuthStateChanged(async function (user) {
             var fileInput = document.getElementById("fileInput");
             var file = fileInput.files[0];
             var storageRef = ref(storage, "Files/" + file.name);
+            var captionInput = document.getElementById("caption");
+            var caption = captionInput.value;
           
             // Upload file to Firebase Storage
             var uploadTask = uploadBytes(storageRef, file);
@@ -45,6 +47,7 @@ auth.onAuthStateChanged(async function (user) {
                     // Save the image URL in the Firebase Realtime Database
                     return addDoc(collection(db, "images"), {
                         imageUrl: downloadURL,
+                        caption: caption,
                         userid: user.uid
                     });
                 })

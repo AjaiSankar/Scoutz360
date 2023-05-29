@@ -24,67 +24,74 @@ const storage = getStorage(app);
 // Get the tournament form element
 var form = document.getElementById('tournament-form');
 
-// Handle form submission
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting
-
-    // Get form values
-    var tournamentName = document.getElementById('tournament-name').value;
-    var tournamentSport = document.getElementById('tournament-sport').value;
-    var hostName = document.getElementById('host-name').value;
-    var place = document.getElementById('place').value;
-    var date = document.getElementById('date').value;
-    var prizePool = document.getElementById('prize-pool').value;
-    var entryFee = document.getElementById('entry-fee').value;
-    var ageGroup = document.getElementById('age-group').value;
-    var conditions = document.getElementById('conditions').value;
-    var poster = document.getElementById('poster').files[0];
-
-    // Create a new document in Firestore
-    addDoc(collection(db, 'hosttournamentclubs'),{
-        tournamentName: tournamentName,
-        tournamentSport: tournamentSport,
-        hostName: hostName,
-        place: place,
-        date: date,
-        prizePool: prizePool,
-        entryFee: entryFee,
-        ageGroup: ageGroup,
-        conditions: conditions
-    }).then(function(docRef) {
-        // Document successfully added
-        console.log('Document written with ID: ', docRef.id);
-
-        // Upload the tournament poster to Firebase Storage
-        var storageRef = ref(storage, "posters/" + docRef.id);
-        var uploadTask = uploadBytes(storageRef,poster);
+auth.onAuthStateChanged(async function (user) {
+    if (user) 
+    {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
         
-        uploadTask
-        .then(function(snapshot) {
-            // Poster uploaded successfully
-            console.log('Poster uploaded successfully');
-
-            // Get the download URL of the uploaded poster
-            return getDownloadURL(snapshot.ref);
-        })
-        .then(function(downloadURL) {
-            // Update the tournament document with the poster URL
-            const tournamentRef = doc(db, 'hosttournamentclubs', docRef.id);
-            return updateDoc(tournamentRef, { posterURL: downloadURL });
-        })        
-        .then(function() {
-            // Tournament document updated successfully
-            console.log('Tournament document updated successfully');
-            alert('Tournament added successfully');
-            form.reset();
-        })
-        .catch(function(error) {
-            // Handle any errors that occurred during the upload or update process
-            console.error('Error: ', error);
-        });  
-    }).catch(function(error) {
-        // Error adding document
-        console.error('Error adding document: ', error);
-    });
+            // Get form values
+            var tournamentName = document.getElementById('tournament-name').value;
+            var tournamentSport = document.getElementById('tournament-sport').value;
+            var hostName = document.getElementById('host-name').value;
+            var place = document.getElementById('place').value;
+            var date = document.getElementById('date').value;
+            var prizePool = document.getElementById('prize-pool').value;
+            var entryFee = document.getElementById('entry-fee').value;
+            var ageGroup = document.getElementById('age-group').value;
+            var conditions = document.getElementById('conditions').value;
+            var poster = document.getElementById('poster').files[0];
+        
+            // Create a new document in Firestore
+            addDoc(collection(db, 'hosttournamentclubs'),{
+                tournamentName: tournamentName,
+                tournamentSport: tournamentSport,
+                hostName: hostName,
+                place: place,
+                date: date,
+                prizePool: prizePool,
+                entryFee: entryFee,
+                ageGroup: ageGroup,
+                conditions: conditions
+            }).then(function(docRef) {
+                // Document successfully added
+                console.log('Document written with ID: ', docRef.id);
+        
+                // Upload the tournament poster to Firebase Storage
+                var storageRef = ref(storage, "posters/" + docRef.id);
+                var uploadTask = uploadBytes(storageRef,poster);
+                
+                uploadTask
+                .then(function(snapshot) {
+                    // Poster uploaded successfully
+                    console.log('Poster uploaded successfully');
+        
+                    // Get the download URL of the uploaded poster
+                    return getDownloadURL(snapshot.ref);
+                })
+                .then(function(downloadURL) {
+                    // Update the tournament document with the poster URL
+                    const tournamentRef = doc(db, 'hosttournamentclubs', docRef.id);
+                    return updateDoc(tournamentRef, { posterURL: downloadURL });
+                })        
+                .then(function() {
+                    // Tournament document updated successfully
+                    console.log('Tournament document updated successfully');
+                    alert('Tournament added successfully');
+                    form.reset();
+                })
+                .catch(function(error) {
+                    // Handle any errors that occurred during the upload or update process
+                    console.error('Error: ', error);
+                });  
+            }).catch(function(error) {
+                // Error adding document
+                console.error('Error adding document: ', error);
+            });
+        });
+    }
 });
+
+// Handle form submission
+
 
