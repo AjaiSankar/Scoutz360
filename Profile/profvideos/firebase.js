@@ -22,25 +22,24 @@ const db = getFirestore(app);
 auth.onAuthStateChanged(async function (user) {
     if (user) {
       console.log(user.uid);
-      const profile = collection(db, 'images');
-      const profileSnapshot = await getDocs(query(profile, where("userid", "==", user.uid)));
-      const cardsContainer = document.querySelector(".photos-container");
-      cardsContainer.innerHTML = "";
+      const videosRef = collection(db, 'videos');
+      const videosSnapshot = await getDocs(query(videosRef, where("userid", "==", user.uid)));
+      const videosContainer = document.querySelector(".videos-container");
+      videosContainer.innerHTML = "";
   
-      profileSnapshot.forEach((doc) => {
-        const profpics = doc.data();
-        const card = document.createElement("div");
-        card.className = "photo-card";
-        card.innerHTML = `
-          <div class="photo">
-            <img src="${profpics.imageUrl}" alt="${profpics.userid} Poster">
-          </div>
-          <div class="caption">
-            <h3>${profpics.caption}</h3>
-            <p>Caption: ${profpics.caption}</p>
+      videosSnapshot.forEach((doc) => {
+        const videoData = doc.data();
+        const videoCard = document.createElement("div");
+        videoCard.className = "video-card";
+        videoCard.innerHTML = `
+          <div class="video-container">
+            <video src="${videoData.videoUrl}" controls></video>
+            <div class="caption">
+              <h3>${videoData.caption}</h3>
+            </div>
           </div>
         `;
-        cardsContainer.appendChild(card);
+        videosContainer.appendChild(videoCard);
       });
     }
   });
