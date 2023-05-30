@@ -136,6 +136,16 @@ body {
     cursor: pointer;
 }
 
+.extra-button {
+   
+    padding: 10px 20px;
+    background-color: #00133E;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .chat-container {
     display: none;
     position: fixed;
