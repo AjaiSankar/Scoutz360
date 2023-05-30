@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Create Your Player Profile</h1>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form id="profiledata" action="#" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -20,7 +20,7 @@
                 <select id="sport" name="sport" required>
                     <option value="">Select a sport</option>
                     <option value="football">Football</option>
-                    <option value="basketball">Cricket</option>
+                    <option value="cricket">Cricket</option>
                    
                 </select>
             </div>
@@ -69,9 +69,7 @@
                 <label for="profile-picture" class="upload-button">Upload</label>
                 <span id="file-info" class="upload-file-info"></span>
             </div>
-            <button class="glow-on-hover" type="button" onclick="window.location.href='#';" style="left: 150px">
-                Create Profile
-            </button>
+            <input type="submit" value="Submit">
         </form>
     </div>
 
@@ -100,5 +98,6 @@
             ageInput.value = years + ' years, ' + months + ' months, ' + days + ' days';
         });
     </script>
+    <script type="module" src="./firebase.js"></script>
 </body>
 </html>

@@ -21,8 +21,7 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage(app);
 
-// Get the tournament form element
-var form = document.getElementById('tournament-form');
+var form = document.getElementById('profiledata');
 
 auth.onAuthStateChanged(async function (user) {
     if (user) 
@@ -31,53 +30,50 @@ auth.onAuthStateChanged(async function (user) {
             event.preventDefault(); // Prevent form from submitting
         
             // Get form values
-            var tournamentName = document.getElementById('tournament-name').value;
-            var tournamentSport = document.getElementById('tournament-sport').value;
-            var hostName = document.getElementById('host-name').value;
-            var place = document.getElementById('place').value;
-            var date = document.getElementById('date').value;
-            var prizePool = document.getElementById('prize-pool').value;
-            var entryFee = document.getElementById('entry-fee').value;
-            var ageGroup = document.getElementById('age-group').value;
-            var conditions = document.getElementById('conditions').value;
-            var poster = document.getElementById('poster').files[0];
+            var PName = document.getElementById('name').value;
+            var PSport = document.getElementById('sport').value;
+            var PDOB = document.getElementById('dob').value;
+            var PAge = document.getElementById('age').value;
+            var PState = document.getElementById('state').value;
+            var PDistrict = document.getElementById('district').value;
+            var PMobile = document.getElementById('mobile-number').value;
+            var PDP = document.getElementById('profile-picture').files[0];
         
             // Create a new document in Firestore
-            addDoc(collection(db, 'hosttournamentclubs'),{
-                tournamentName: tournamentName,
-                tournamentSport: tournamentSport,
-                hostName: hostName,
-                place: place,
-                date: date,
-                prizePool: prizePool,
-                entryFee: entryFee,
-                ageGroup: ageGroup,
-                conditions: conditions
+            addDoc(collection(db, 'PlayerProfileData'),{
+                PlayerName: PName,
+                PlayerSport: PSport,
+                PDOB: PDOB,
+                PAge: PAge,
+                PState: PState,
+                PDistrict: PDistrict,
+                PMobile: PMobile,
+                userid: user.uid
             }).then(function(docRef) {
                 // Document successfully added
                 console.log('Document written with ID: ', docRef.id);
         
                 // Upload the tournament poster to Firebase Storage
-                var storageRef = ref(storage, "posters/" + docRef.id);
-                var uploadTask = uploadBytes(storageRef,poster);
+                var storageRef = ref(storage, "PlayerDP" + docRef.id);
+                var uploadTask = uploadBytes(storageRef,PDP);
                 
                 uploadTask
                 .then(function(snapshot) {
                     // Poster uploaded successfully
-                    console.log('Poster uploaded successfully');
+                    console.log('Image uploaded successfully');
         
                     // Get the download URL of the uploaded poster
                     return getDownloadURL(snapshot.ref);
                 })
                 .then(function(downloadURL) {
                     // Update the tournament document with the poster URL
-                    const tournamentRef = doc(db, 'hosttournamentclubs', docRef.id);
-                    return updateDoc(tournamentRef, { posterURL: downloadURL });
+                    const PDPRef = doc(db, 'PlayerProfileData', docRef.id);
+                    return updateDoc(PDPRef, { ProfilePictureURL: downloadURL });
                 })        
                 .then(function() {
                     // Tournament document updated successfully
-                    console.log('Tournament document updated successfully');
-                    alert('Tournament added successfully');
+                    console.log('Player document updated successfully');
+                    alert('Player Profile added successfully');
                     form.reset();
                 })
                 .catch(function(error) {
