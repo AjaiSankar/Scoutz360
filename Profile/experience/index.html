@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player Experience Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333333;
+      text-align: center;
+    }
+
+    p {
+      color: #666666;
+      text-align: center;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333333;
+      font-weight: bold;
+    }
+
+    input[type="text"]
+    {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      resize: vertical;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Player Experience Submission</h1>
+  <p>Hello player, add your experience and impress the clubs!</p>
+
+  <form>
+
+    <label for="team">Team:</label>
+    <input type="text" id="team" name="team"><br>
+
+    <label for="game">Game(s) Played:</label>
+    <input type="text" id="game" name="game" required><br>
+
+    <label for="years">Years of Play:</label>
+    <input type="text" id="years" name="years"><br>
+
+    <label for="role">Special Roles (if any):</label>
+    <input type="text" id="role" name="role"><br>
+
+    <label for="experience">Any other Details:</label><br>
+    <textarea id="experience" name="experience" rows="4" cols="50"></textarea><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
