@@ -1,7 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js'
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js'
-import { getFirestore, addDoc, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js'
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js'
+import { getFirestore, addDoc, collection, getDocs,query ,where} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDIh1tbO5WYQOsC5J0eCT3gMLqf9TA5M8Q",
@@ -15,12 +14,25 @@ const firebaseConfig = {
   
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
+
 auth.onAuthStateChanged(async function (user) {
-    if (user) 
-    {
-        console.log(user.uid)
+    if (user) {
+      console.log(user.uid);
+      
+      // Reference to the Firestore collection
+      const usersCollection = collection(db, 'PlayerProfileData');
+  
+      // Query to check if the user ID exists
+      const q = query(usersCollection, where('userId', '==', user.uid));
+      const querySnapshot = await getDocs(q);
+  
+      if (querySnapshot.empty) {
+        console.log('User ID does not exist in the collection.');
+        window.location.href = "../../Profile/create/index.html";
+      } else {
+        console.log('User ID exists in the collection.');
+      }
     }
-});
+  });

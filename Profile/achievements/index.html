@@ -8,10 +8,10 @@
   <h1>Achievements Submission</h1>
   <p>Share your playing achievements with us!</p>
 
-  <form>
+  <form id="achievementsdata">
 
     <label for="name">Team Name:</label>
-    <input type="text" id="name" name="name" required><br>
+    <input type="text" id="Tname" name="Tname" required><br>
 
     <label for="achievement">Achievement Details:</label><br>
     <textarea id="achievement" name="achievement" rows="4" cols="50" required></textarea><br>
@@ -22,4 +22,5 @@
     <input type="submit" value="Submit">
   </form>
 </body>
+<script type="module" src="./firebase.js"></script>
 </html>
