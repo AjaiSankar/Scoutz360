@@ -30,13 +30,11 @@ auth.onAuthStateChanged(async function (user) {
             event.preventDefault(); // Prevent form from submitting
         
             // Get form values
-            var TeamName = document.getElementById('Tname').value;
             var achievement = document.getElementById('achievement').value;
             var ACertificate = document.getElementById('certificate').files[0];
 
             // Create a new document in Firestore
             addDoc(collection(db, 'PlayersAchievements'),{
-                TeamName: TeamName,
                 Achievement: achievement,
                 userid: user.uid
             }).then(function(docRef) {

@@ -30,18 +30,10 @@ auth.onAuthStateChanged(async function (user) {
             event.preventDefault(); // Prevent form from submitting
         
             // Get form values
-            var TeamName = document.getElementById('team').value;
-            var NoofGames = document.getElementById('game').value;
-            var Years = document.getElementById('years').value;
-            var Role = document.getElementById('role').value;
             var Experience = document.getElementById('experience').value;
         
             // Create a new document in Firestore
             addDoc(collection(db, 'ExperienceData'),{
-                TeamName: TeamName,
-                NoofGames: NoofGames,
-                Years: Years,
-                Role: Role,
                 Experience: Experience,
                 userid: user.uid
             }).then(function(docRef) {
