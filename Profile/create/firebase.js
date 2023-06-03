@@ -25,7 +25,7 @@ var form = document.getElementById('profiledata');
 
 auth.onAuthStateChanged(async function (user) {
     if (user) 
-    {
+    {   console.log(user.uid)
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form from submitting
         

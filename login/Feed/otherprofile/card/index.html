@@ -142,18 +142,21 @@
         </span>
       </div>
     </div>
-  </nav>
+</nav>
+
+
+
   <div class="container">
     <div class="profile-card">
       <div class="profile-picture">
         <h5 style="line-height: 1; color: #fff;">Scoutz360 Player Profile Card</h5>
         <h6 style="line-height: 1; color: aliceblue;">Get Scouted Easily</h6>
-        <img id="player-picture" src="" alt="Player Picture">
+        <img id="player-picture" src="/Images/vivek.jpg" alt="Player Picture">
       </div>
       <div class="profile-details">
-        <h2 class="player-name" style="color: blanchedalmond;"></h2>
-        <p class="player-sport" style="color: blanchedalmond;"></p>
-        <p class="player-position" style="color: blanchedalmond;"></p>
+        <h2 class="player-name" style="color: blanchedalmond;">Vivekanand R</h2>
+        <p class="player-sport" style="color: blanchedalmond;">Cricketer</p>
+        <p class="player-position" style="color: blanchedalmond;">Batsman</p>
       </div>
       <div class="membership" style="color: aliceblue;">
         Proud member of <span class="membership-text" style="color: #f2f2f2;">Scoutz360</span>
@@ -162,7 +165,21 @@
 
     <button id="download-button">Download & Share</button>
   </div>
+
+  <script>
+    // Handle download event
+    function downloadPlayerCard() {
+      const cardContainer = document.querySelector('.profile-card');
+      html2canvas(cardContainer).then(function(canvas) {
+        const link = document.createElement('a');
+        link.download = 'player-card.jpg';
+        link.href = canvas.toDataURL('image/jpeg');
+        link.click();
+      });
+    }
+
+    const downloadButton = document.getElementById('download-button');
+    downloadButton.addEventListener('click', downloadPlayerCard);
+  </script>
 </body>
-<script src="./script.js"></script>
-<script type="module" src="./firebase.js"></script>
 </html>
