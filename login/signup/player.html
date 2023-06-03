@@ -2,31 +2,32 @@
 <html>
 <head>
   <title>Scouts Sign Up</title>
-  <link rel="stylesheet" type="text/css" href="stylesignup.css">
+  <link rel="stylesheet" type="text/css" href="/login/signup/style.css">
 </head>
 <body>
   <div class="container">
-    <h2>Sign Up</h2>
+    <h2> Player Sign Up</h2>
     <form action="#" method="post" id="signupForm" autocomplete="off">
       <!-- <label for="name">Name</label> -->
       <input type="text" id="name" name="name" required placeholder="Name">
       
       <!-- <label for="email">Email</label> -->
       <input type="email" id="email" name="email" required placeholder="Email Address">
-      
-      <input type="text" id="phonenumber" name="phonenumber" required placeholder="Phone Number">
 
+      <input type="text" id="phone" name="phone" required placeholder="Phone">
+      
       <!-- <label for="password">Password</label> -->
       <input type="password" id="password" name="password" required placeholder="Password">
       
       <!-- <label for="confirmPassword">Confirm Password</label> -->
       <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm Password">
-      
-      <button class="glow-on-hover" type="submit" >
+      <button class="glow-on-hover" id="login" type="submit" style="display: none;">
+        Login</button>
+      <button class="glow-on-hover" id="register" type="submit" >
         Sign Up</button>
     </form>
-    <h5>Already have an account? <a href="#">Click Here</a></h5>
+    <h5>Already have an account? <a href="/login/index.html">Click Here</a></h5>
   </div>
-  
 </body>
+<script type="module" src="./firebase.js"></script>
 </html>
