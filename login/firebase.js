@@ -41,7 +41,6 @@ document.getElementById("login").addEventListener("click", function (event) {
         window.location.href = "./Feed/index.html";
         console.log(user.uid)
       }
-      
     })
     .catch((error) => {
       const errorCode = error.code;

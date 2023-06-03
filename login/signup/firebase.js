@@ -25,7 +25,8 @@ document.getElementById("register").addEventListener("click", async function (ev
     var email = document.getElementById("email").value;
     var password1 = document.getElementById("password").value;
     var name = document.getElementById("name").value;
-    var phno = document.getElementById("phonenumber").value;
+  //   var department = document.getElementById("departmentRegister").value;
+  //   var phno = document.getElementById("phnoRegister").value;
     var password2 = document.getElementById("confirmPassword").value;
     
     if (!validatePassword(password1, password2)) {
@@ -42,7 +43,8 @@ document.getElementById("register").addEventListener("click", async function (ev
           const docRef = await addDoc(collectionRef, {
             UserId: user.uid,
             Name: name,
-            Phno: phno,
+          //   Phno: phno,
+          //   Dept: department
           });
           console.log("Document written with ID: ", docRef.id);
           //alert("Form submitted");
