@@ -24,7 +24,7 @@ document.getElementById("register").addEventListener("click", async function (ev
     event.preventDefault(); // Prevent form submission
     var email = document.getElementById("email").value;
     var password1 = document.getElementById("password").value;
-    var name = document.getElementById("name").value;
+    var name = document.getElementById("clubname").value;
     var phone = document.getElementById("phone").value;
     var password2 = document.getElementById("confirmPassword").value;
     
@@ -43,7 +43,7 @@ document.getElementById("register").addEventListener("click", async function (ev
             UserId: user.uid,
             Name: name,
             PhoneNumber: phone,
-            Type: "player"
+            Type: "club"
           });
           console.log("Document written with ID: ", docRef.id);
           //alert("Form submitted");

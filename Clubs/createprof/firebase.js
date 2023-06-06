@@ -21,48 +21,60 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage(app);
 
-var form = document.getElementById('achievementsdata');
+var form = document.getElementById('clubprofiledata');
 
 auth.onAuthStateChanged(async function (user) {
     if (user) 
-    {
+    {   console.log(user.uid)
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form from submitting
         
             // Get form values
-            var achievement = document.getElementById('achievement').value;
-            var ACertificate = document.getElementById('certificate').files[0];
-
+            var CName = document.getElementById('name').value;
+            var CSport = document.getElementById('sport').value;
+            var Coach = document.getElementById('coach').value;
+            var Captain = document.getElementById('captain').value;
+            var PState = document.getElementById('state').value;
+            var PDistrict = document.getElementById('district').value;
+            var PMobile = document.getElementById('mobile-number').value;
+            var PDP = document.getElementById('profile-picture').files[0];
+        
             // Create a new document in Firestore
-            addDoc(collection(db, 'PlayersAchievements'),{
-                Achievement: achievement,
+            addDoc(collection(db, 'ClubProfileData'),{
+                PlayerName: CName,
+                PlayerSport: CSport,
+                CoachName: Coach,
+                CaptainName: Captain,
+                PState: PState,
+                PDistrict: PDistrict,
+                PMobile: PMobile,
                 userid: user.uid
             }).then(function(docRef) {
                 // Document successfully added
                 console.log('Document written with ID: ', docRef.id);
         
                 // Upload the tournament poster to Firebase Storage
-                var storageRef = ref(storage, "Achievements/Certificate" + docRef.id);
-                var uploadTask = uploadBytes(storageRef,ACertificate);
+                var storageRef = ref(storage, "ProfilePics/PlayerDP" + docRef.id);
+                var uploadTask = uploadBytes(storageRef,PDP);
                 
                 uploadTask
                 .then(function(snapshot) {
-                    // Certificate uploaded successfully
-                    console.log('Certificate uploaded successfully');
+                    // Poster uploaded successfully
+                    console.log('Image uploaded successfully');
         
                     // Get the download URL of the uploaded poster
                     return getDownloadURL(snapshot.ref);
                 })
                 .then(function(downloadURL) {
-                    // Update the Achievement document with the Certificate URL
-                    const AchievementRef = doc(db, 'PlayersAchievements', docRef.id);
-                    return updateDoc(AchievementRef, { CertificateURL: downloadURL });
+                    // Update the tournament document with the poster URL
+                    const PDPRef = doc(db, 'ClubProfileData', docRef.id);
+                    return updateDoc(PDPRef, { ProfilePictureURL: downloadURL });
                 })        
                 .then(function() {
-                    // Certificate document updated successfully
+                    // Tournament document updated successfully
                     console.log('Player document updated successfully');
-                    alert('Player Acievement added successfully');
-                    form.reset();
+                    alert('Player Profile added successfully');
+                    window.location.href = "../../login/Feed/index.html";
                 })
                 .catch(function(error) {
                     // Handle any errors that occurred during the upload or update process

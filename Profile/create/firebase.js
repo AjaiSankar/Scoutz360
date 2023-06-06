@@ -54,7 +54,7 @@ auth.onAuthStateChanged(async function (user) {
                 console.log('Document written with ID: ', docRef.id);
         
                 // Upload the tournament poster to Firebase Storage
-                var storageRef = ref(storage, "PlayerDP" + docRef.id);
+                var storageRef = ref(storage, "ProfilePics/PlayerDP" + docRef.id);
                 var uploadTask = uploadBytes(storageRef,PDP);
                 
                 uploadTask
