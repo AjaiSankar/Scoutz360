@@ -52,7 +52,8 @@ auth.onAuthStateChanged(async function (user) {
                 prizePool: prizePool,
                 entryFee: entryFee,
                 ageGroup: ageGroup,
-                conditions: conditions
+                conditions: conditions,
+                userid: user.uid
             }).then(function(docRef) {
                 // Document successfully added
                 console.log('Document written with ID: ', docRef.id);

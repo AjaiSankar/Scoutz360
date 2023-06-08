@@ -33,6 +33,9 @@ auth.onAuthStateChanged(async function (user) {
         var tournament = doc.data();
         var card = document.createElement("div");
         card.className = "col";
+        console.log(doc.id);
+        const docid=doc.id;
+        sessionStorage.setItem("tournamentid", docid);
         card.innerHTML = `
           <div class="card">
             <img src="${tournament.posterURL}" class="card-img-top" alt="${tournament.name} Poster">
@@ -46,7 +49,7 @@ auth.onAuthStateChanged(async function (user) {
                 <span class="entry-fee-tag">Entry Fee</span>
                 <span class="entry-fee">${tournament.entryFee}</span>
               </div>
-              <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Find/apply/apply.html';">
+              <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Find/apply/apply.html?tournamentId=${docid}';">
                 Apply Now</button>
             </div>
           </div>

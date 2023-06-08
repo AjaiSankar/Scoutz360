@@ -20,6 +20,13 @@ const auth = getAuth();
 auth.onAuthStateChanged(async function (user) {
     if (user) 
     {
+        // const tid=sessionStorage.getItem("tournamentid");
+        // console.log(tid);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        // Retrieve the userId parameter
+        const tournamentId = urlParams.get('tournamentId');
+        console.log(tournamentId);
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             
@@ -29,11 +36,13 @@ auth.onAuthStateChanged(async function (user) {
             const contactDetails = form['contact-details'].value;
             
             try {
+
                 const docRef = await addDoc(collection(db, 'clubApplications'), {
                     clubName,
                     place,
                     captainName,
-                    contactDetails
+                    contactDetails,
+                    tournamentId
                 });
                 console.log('Document written with ID: ', docRef.id);
                 
