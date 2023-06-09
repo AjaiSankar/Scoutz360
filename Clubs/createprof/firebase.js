@@ -41,13 +41,13 @@ auth.onAuthStateChanged(async function (user) {
         
             // Create a new document in Firestore
             addDoc(collection(db, 'ClubProfileData'),{
-                PlayerName: CName,
-                PlayerSport: CSport,
+                ClubName: CName,
+                ClubSport: CSport,
                 CoachName: Coach,
                 CaptainName: Captain,
-                PState: PState,
-                PDistrict: PDistrict,
-                PMobile: PMobile,
+                CState: PState,
+                CDistrict: PDistrict,
+                CMobile: PMobile,
                 userid: user.uid
             }).then(function(docRef) {
                 // Document successfully added
