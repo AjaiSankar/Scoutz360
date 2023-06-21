@@ -32,7 +32,14 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
-
+const handlequery=async function(docid){
+  console.log(docid);
+  const dataCollectionRef=collection(db,"clubApplications",where ("tournamentId","==",docid));
+  const querySnapshot=await getDocs(dataCollectionRef);
+  for(const doc of querySnapshot.docs){
+    console.log(doc.data().clubName);
+  }
+}
 auth.onAuthStateChanged(async function (user) {
   if (user) {
     console.log(user.uid);
@@ -64,112 +71,51 @@ auth.onAuthStateChanged(async function (user) {
       });
     });
 
-    const tableBody = document.querySelector("tbody");
+    // Access the "hosttournamentclubs" collection in Firestore
+    const hostTournamentClubsRef = collection(db, "hosttournamentclubs");
 
-    // Access the "clubApplications" collection in Firestore
-    const clubApplicationsRef = collection(db, "clubApplications");
-
-    // Retrieve the club application documents
-    getDocs(clubApplicationsRef)
+    // Retrieve the hosttournamentclubs documents
+    getDocs(hostTournamentClubsRef)
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          const clubApplication = doc.data();
+          const hostTournamentClubs = doc.data();
 
-          // Access the "hosttournamentclubs" subcollection using the appropriate method
-          const hostTournamentClubsRef = collection(
-            db,
-            "clubApplications",
-            doc.id,
-            "hosttournamentclubs"
+          // Create a new tournament card
+          const tournamentCard = document.createElement("div");
+          tournamentCard.className = "tournament-card";
+
+          // Set the tournament name
+          const tournamentName = document.createElement("h3");
+          tournamentName.className = "tournament-name";
+          tournamentName.textContent = hostTournamentClubs.tournamentName;
+          tournamentCard.appendChild(tournamentName);
+
+          // Set the tournament details
+          const tournamentDetails = document.createElement("div");
+          tournamentDetails.className = "tournament-details";
+          tournamentDetails.innerHTML = `
+        <p>Date: ${hostTournamentClubs.date}</p>
+        <p>Location: ${hostTournamentClubs.place}</p>
+        <p>Prize: ${hostTournamentClubs.prizePool}</p>
+      `;
+          tournamentCard.appendChild(tournamentDetails);
+
+          // Append the tournament card to the tournaments section
+          const tournamentsSection = document.querySelector(
+            ".tournaments-section"
           );
+          tournamentsSection.appendChild(tournamentCard);
 
-          // Retrieve the "hosttournamentclubs" document
-          getDocs(hostTournamentClubsRef)
-            .then((hostTournamentClubsSnapshot) => {
-              if (!hostTournamentClubsSnapshot.empty) {
-                const hostTournamentClubsDoc =
-                  hostTournamentClubsSnapshot.docs[0];
-                const hostTournamentClubs = hostTournamentClubsDoc.data();
+          
+          handlequery(doc.id);
 
-                // Create a new tournament card
-                const tournamentCard = document.createElement("div");
-                tournamentCard.className = "tournament-card";
 
-                // Set the tournament name
-                const tournamentName = document.createElement("h3");
-                tournamentName.className = "tournament-name";
-                tournamentName.textContent = hostTournamentClubs.tournamentName;
-                tournamentCard.appendChild(tournamentName);
-
-                // Set the tournament details
-                const tournamentDetails = document.createElement("div");
-                tournamentDetails.className = "tournament-details";
-                tournamentDetails.innerHTML = `
-                    <p>Date: ${hostTournamentClubs.date}</p>
-                    <p>Location: ${hostTournamentClubs.place}</p>
-                    <p>Prize: ${hostTournamentClubs.prizePool}</p>
-                  `;
-                tournamentCard.appendChild(tournamentDetails);
-
-                console.log(hostTournamentClubs.tournamentName);
-                console.log(hostTournamentClubs.date);
-                console.log(hostTournamentClubs.place);
-                console.log(hostTournamentClubs.prizePool);
-
-                // Set the applied clubs
-                const appliedClubs = document.createElement("div");
-                appliedClubs.className = "applied-clubs";
-                appliedClubs.innerHTML = `
-                    <h4>Clubs Applied:</h4>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Club Name</th>
-                          <th>Captain Name</th>
-                          <th>Place</th>
-                          <th>Phone Number</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        ${clubApplication.clubs
-                          .map(
-                            (club) => `
-                              <tr>
-                                <td>${club.clubName}</td>
-                                <td>${club.captainName}</td>
-                                <td>${club.place}</td>
-                                <td>${club.contactDetails}</td>
-                              </tr>
-                            `
-                          )
-                          .join("")}
-                      </tbody>
-                    </table>
-                  `;
-                tournamentCard.appendChild(appliedClubs);
-                console.log(club.clubName);
-                console.log(club.captainName);
-                console.log(club.place);
-                console.log(club.contactDetails);
-
-                // Append the tournament card to the tournaments section
-                const tournamentsSection = document.querySelector(
-                  ".tournaments-section"
-                );
-                tournamentsSection.appendChild(tournamentCard);
-              } else {
-                console.log(
-                  "No hosttournamentclubs document found for club application"
-                );
-              }
-            })
-            .catch((error) => {
-              console.log("Error getting hosttournamentclubs document:", error);
-            });
         });
       })
       .catch((error) => {
-        console.log("Error getting clubApplications documents:", error);
+        console.log("Error getting hosttournamentclubs documents:", error);
       });
+     
   }
 });
+
