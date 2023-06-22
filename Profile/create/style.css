@@ -148,3 +148,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+
+.image-container {
+    margin-right: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 50%;
+}
