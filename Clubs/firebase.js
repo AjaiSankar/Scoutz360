@@ -27,19 +27,48 @@ const firebaseConfig = {
   measurementId: "G-NQ601C7WBT",
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
-const handlequery=async function(docid){
+
+// JavaScript code
+const handlequery = async function (docid) {
   console.log(docid);
-  const dataCollectionRef=collection(db,"clubApplications",where ("tournamentId","==",docid));
-  const querySnapshot=await getDocs(dataCollectionRef);
-  for(const doc of querySnapshot.docs){
-    console.log(doc.data().clubName);
-  }
-}
+  const dataCollectionRef = collection(db, "clubApplications");
+
+  const querySnapshot = await getDocs(
+    query(dataCollectionRef, where("tournamentId", "==", docid))
+  );
+
+  const tableBody = document.querySelector("#table-body");
+  tableBody.innerHTML = ""; // Clear existing table rows
+
+  querySnapshot.forEach((doc) => {
+    const clubName = doc.data().clubName;
+    const teamName = doc.data().captainName;
+    const contactPerson = doc.data().contactDetails;
+
+    const row = document.createElement("tr");
+    const clubNameCell = document.createElement("td");
+    clubNameCell.textContent = clubName;
+    const teamNameCell = document.createElement("td");
+    teamNameCell.textContent = teamName;
+    const contactPersonCell = document.createElement("td");
+    contactPersonCell.textContent = contactPerson;
+
+    row.appendChild(clubNameCell);
+    row.appendChild(teamNameCell);
+    row.appendChild(contactPersonCell);
+
+    tableBody.appendChild(row);
+    console.log(doc.id);
+    console.log(doc.data());
+  });
+};
+
 auth.onAuthStateChanged(async function (user) {
   if (user) {
     console.log(user.uid);
@@ -73,49 +102,62 @@ auth.onAuthStateChanged(async function (user) {
 
     // Access the "hosttournamentclubs" collection in Firestore
     const hostTournamentClubsRef = collection(db, "hosttournamentclubs");
-
+    const querySnapshot = await getDocs(
+      query(hostTournamentClubsRef, where("userid", "==", user.uid))
+    );
     // Retrieve the hosttournamentclubs documents
-    getDocs(hostTournamentClubsRef)
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const hostTournamentClubs = doc.data();
+    querySnapshot.forEach((doc) => {
+      const hostTournamentClubs = doc.data();
 
-          // Create a new tournament card
-          const tournamentCard = document.createElement("div");
-          tournamentCard.className = "tournament-card";
+      // Create a new tournament card
+      const tournamentCard = document.createElement("div");
+      tournamentCard.className = "tournament-card";
 
-          // Set the tournament name
-          const tournamentName = document.createElement("h3");
-          tournamentName.className = "tournament-name";
-          tournamentName.textContent = hostTournamentClubs.tournamentName;
-          tournamentCard.appendChild(tournamentName);
+      // Set the tournament name
+      const tournamentName = document.createElement("h3");
+      tournamentName.className = "tournament-name";
+      tournamentName.textContent = hostTournamentClubs.tournamentName;
+      tournamentCard.appendChild(tournamentName);
 
-          // Set the tournament details
-          const tournamentDetails = document.createElement("div");
-          tournamentDetails.className = "tournament-details";
-          tournamentDetails.innerHTML = `
+      const registerButton = document.createElement("button");
+      registerButton.className = "application-button";
+      registerButton.textContent = "View Applications";
+      registerButton.addEventListener("click", function() {
+        const docId = doc.id; // Get the document ID
+        window.location.href = "/Clubs/appliedclubs/applyclub.html?docId=" + docId;
+      });
+      tournamentCard.appendChild(registerButton);
+
+      // Set the tournament details
+      const tournamentDetails = document.createElement("div");
+      tournamentDetails.className = "tournament-details";
+      tournamentDetails.innerHTML = `
+      <br><br>
         <p>Date: ${hostTournamentClubs.date}</p>
         <p>Location: ${hostTournamentClubs.place}</p>
         <p>Prize: ${hostTournamentClubs.prizePool}</p>
+        <div id="applied-clubs">
+          <table id="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
       `;
-          tournamentCard.appendChild(tournamentDetails);
+      tournamentCard.appendChild(tournamentDetails);
 
-          // Append the tournament card to the tournaments section
-          const tournamentsSection = document.querySelector(
-            ".tournaments-section"
-          );
-          tournamentsSection.appendChild(tournamentCard);
+      // Append the tournament card to the tournaments section
+      const tournamentsSection = document.querySelector(".tournaments-section");
+      tournamentsSection.appendChild(tournamentCard);
 
-          
-          handlequery(doc.id);
+      console.log(doc.id);
 
-
-        });
-      })
-      .catch((error) => {
-        console.log("Error getting hosttournamentclubs documents:", error);
-      });
-     
+      handlequery(doc.id);
+    });
   }
 });
-
