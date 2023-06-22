@@ -3,15 +3,17 @@ body {
     background-color: #f1f1f1;
 }
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #d9dcd6;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     text-align: center;
+    color: white;
 }
 .form-group {
     margin-bottom: 15px;
@@ -20,6 +22,7 @@ h1 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: white;
 }
 .form-group input[type="text"],
 .form-group textarea {
@@ -42,7 +45,7 @@ h1 {
     border: none;
     outline: none;
     color: #fff;
-    background: green;
+    background: #00133E;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -67,7 +70,7 @@ h1 {
   }
   
   .glow-on-hover:active {
-    color: green;
+    color: #00133E;
   }
   
   .glow-on-hover:active:after {
@@ -84,7 +87,7 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: green;
+    background: #00133E;
     left: 0;
     top: 0;
     border-radius: 10px;
