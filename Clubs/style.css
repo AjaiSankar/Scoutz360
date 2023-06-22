@@ -143,28 +143,22 @@ body {
 
 /* Club card styles */
 .club-card {
-  background-color: #fff;
+  background-image: url('/Images/expbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 20px;
   margin-bottom: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  height: 300px;
+  color: #f5f5f5;
+ text-decoration: wavy;
 }
 
-.club-logo {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.club-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
 
 .club-details {
   text-align: center;
@@ -240,6 +234,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     text-align: center;
+    
   }
 
   .club-logo {
@@ -250,7 +245,7 @@ body {
 
 .application-button {
   padding: 10px 20px;
-  background-color: #337ab7;
+  background-color: #00133E;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -264,3 +259,28 @@ body {
   background-color: #23527c;
 }
 
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  background-color: #fff;
+  position: absolute;
+  left: 150px;
+  top: 250px;
+  transform: translateY(-50%);
+}
+
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
