@@ -1,3 +1,4 @@
+// Firebase initialization code (same as your provided code)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
 import {
@@ -39,6 +40,46 @@ auth.onAuthStateChanged(async function (user) {
     const urlParams = new URLSearchParams(window.location.search);
     const docId = urlParams.get("docId");
     console.log(docId); // Display the document ID in the console
-    
+
+    // Get a reference to the "clubApplications" collection in Firestore
+    const clubApplicationsRef = collection(db, "clubApplications");
+
+    // Fetch the data and check if the docId matches the tournamentId
+    const querySnapshot = await getDocs(
+      query(clubApplicationsRef, where("tournamentId", "==", docId))
+    );
+
+    if (querySnapshot.empty) {
+      // If no matching document found, handle the error or show a message
+      console.log("No matching document found");
+      return;
+    }
+
+    querySnapshot.forEach((doc) => {
+      const clubName = doc.data().clubName;
+      const place = doc.data().place;
+      const captain = doc.data().captainName;
+      const phone = doc.data().contactDetails;
+
+      // Create a new card element
+      const card = document.createElement("div");
+      card.className = "card";
+
+      // Set the content of the card
+      card.innerHTML = `
+        <p>Club Name</p>
+        <h3>${clubName}</h3>
+        <p>Place</p>
+        <h3>${place}</h3>
+        <p>Captain</p>
+        <h3>${captain}</h3>
+        <p>Phone</p>
+        <h3>${phone}</h3>
+      `;
+
+      // Append the card to the container
+      const container = document.querySelector(".container");
+      container.appendChild(card);
+    });
   }
 });

@@ -35,39 +35,6 @@ const auth = getAuth();
 const db = getFirestore();
 
 // JavaScript code
-const handlequery = async function (docid) {
-  console.log(docid);
-  const dataCollectionRef = collection(db, "clubApplications");
-
-  const querySnapshot = await getDocs(
-    query(dataCollectionRef, where("tournamentId", "==", docid))
-  );
-
-  const tableBody = document.querySelector("#table-body");
-  tableBody.innerHTML = ""; // Clear existing table rows
-
-  querySnapshot.forEach((doc) => {
-    const clubName = doc.data().clubName;
-    const teamName = doc.data().captainName;
-    const contactPerson = doc.data().contactDetails;
-
-    const row = document.createElement("tr");
-    const clubNameCell = document.createElement("td");
-    clubNameCell.textContent = clubName;
-    const teamNameCell = document.createElement("td");
-    teamNameCell.textContent = teamName;
-    const contactPersonCell = document.createElement("td");
-    contactPersonCell.textContent = contactPerson;
-
-    row.appendChild(clubNameCell);
-    row.appendChild(teamNameCell);
-    row.appendChild(contactPersonCell);
-
-    tableBody.appendChild(row);
-    console.log(doc.id);
-    console.log(doc.data());
-  });
-};
 
 auth.onAuthStateChanged(async function (user) {
   if (user) {
@@ -136,18 +103,6 @@ auth.onAuthStateChanged(async function (user) {
         <p>Date: ${hostTournamentClubs.date}</p>
         <p>Location: ${hostTournamentClubs.place}</p>
         <p>Prize: ${hostTournamentClubs.prizePool}</p>
-        <div id="applied-clubs">
-          <table id="data-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody id="table-body"></tbody>
-          </table>
-        </div>
       `;
       tournamentCard.appendChild(tournamentDetails);
 
@@ -156,8 +111,6 @@ auth.onAuthStateChanged(async function (user) {
       tournamentsSection.appendChild(tournamentCard);
 
       console.log(doc.id);
-
-      handlequery(doc.id);
     });
   }
 });
