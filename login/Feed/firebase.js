@@ -26,6 +26,7 @@ const db = getFirestore();
 auth.onAuthStateChanged(async function (user) {
   let fieldValue;
   if (user) {
+
     console.log(user.uid);
     // Reference to the Firestore collection
 
@@ -115,6 +116,8 @@ auth.onAuthStateChanged(async function (user) {
             container.appendChild(userLink);
             container.appendChild(imageElement);
             container.appendChild(captionParagraph);
+
+            userLink.classList.add("profile-name");
 
             // Append the container to the main section
             const mainSection = document.querySelector("main");

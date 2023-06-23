@@ -50,12 +50,6 @@ auth.onAuthStateChanged(async function (user) {
             console.log("User type not found");
       }
     }
-
-    // Event listener for the "My Profile" link
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   var profileLink = document.querySelector(
-    //     '.nav-link[href*="Profile/index.html"]'
-    //   );
     const profileLink = document.getElementById("profile-type");
     profileLink.addEventListener("click", function (event) {
       event.preventDefault(); // Prevent default link behavior
@@ -90,6 +84,5 @@ auth.onAuthStateChanged(async function (user) {
         }
       );
     });
-    // });
   }
 });
