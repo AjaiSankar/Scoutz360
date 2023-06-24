@@ -68,14 +68,14 @@
   </div>
   <div id="popup" class="popup">
     <div class="popup-content">
-      <h2>Add Post</h2>
+      <h2>Add Image</h2>
       <form id="upload-form" class="upload-form">
         <div class="form-group">
           <label for="file-upload">
             <i class="fas fa-cloud-upload-alt"></i>
             Choose File
           </label>
-          <input type="file" id="file-upload" name="file-upload" accept="image/*, video/*" multiple>
+          <input type="file" id="file-upload" name="file-upload" accept="image/*" multiple>
         </div>
         <div class="form-group">
           <label for="caption">
@@ -159,40 +159,7 @@
 
 
 </body>
-<script>
-  const addPostButton = document.getElementById('add-post-button');
-const popup = document.getElementById('popup');
-const closePopupButton = document.getElementById('close-popup');
-const uploadForm = document.getElementById('upload-form');
-
-addPostButton.addEventListener('click', () => {
-  popup.style.display = 'block';
-});
-
-closePopupButton.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
-
-uploadForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  // Handle form submission here
-  // You can access the uploaded file and caption using e.target.elements
-  // For example: const file = e.target.elements['file-upload'].files[0];
-  //              const caption = e.target.elements['caption'].value;
-  popup.style.display = 'none';
-});
-
-$(document).ready(function() {
-  $('#ad-carousel').slick({
-    dots: true, // Show navigation dots
-    infinite: true, // Enable infinite looping
-    speed: 500, // Transition speed in milliseconds
-    slidesToShow: 3, // Number of slides to show at once
-    slidesToScroll: 1 // Number of slides to scroll per navigation
-  });
-});
-
-</script>
 <script type="module" src="./firebase.js"></script>
 <script type="module" src="../../navbar.js"></script>
+<script type="module" src="./popinsert.js"></script>
 </html>

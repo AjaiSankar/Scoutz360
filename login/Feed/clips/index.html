@@ -49,7 +49,6 @@
       </div>
   </nav>
 
-  
   <header>
     <div class="container">
       <div class="header-content">
@@ -160,7 +159,8 @@
 
 </body>
 <script>
-  const addPostButton = document.getElementById('add-post-button');
+
+const addPostButton = document.getElementById('add-post-button');
 const popup = document.getElementById('popup');
 const closePopupButton = document.getElementById('close-popup');
 const uploadForm = document.getElementById('upload-form');
@@ -182,17 +182,7 @@ uploadForm.addEventListener('submit', (e) => {
   popup.style.display = 'none';
 });
 
-$(document).ready(function() {
-  $('#ad-carousel').slick({
-    dots: true, // Show navigation dots
-    infinite: true, // Enable infinite looping
-    speed: 500, // Transition speed in milliseconds
-    slidesToShow: 3, // Number of slides to show at once
-    slidesToScroll: 1 // Number of slides to scroll per navigation
-  });
-});
-
 </script>
 <script type="module" src="./firebase.js"></script>
-<script type="module" src="../../navbar.js"></script>
+<script type="module" src="../../../navbar.js"></script>
 </html>

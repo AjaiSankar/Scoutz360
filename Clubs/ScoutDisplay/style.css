@@ -1,0 +1,189 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* or center */
+    gap: 20px;
+  }
+  
+  
+  .card {
+    flex: 0 0 calc(33.33% - 10px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-blue {
+    background-color: #c0e1ff;
+  }
+  
+  .product-image img {
+    width: 75%;
+    height: auto;
+  }
+  
+  .product-info {
+    margin-top: 20px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .buy-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .buy-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --dark-color-lighten: #f2f5ff;
+  --red-card: #a62121;
+  --blue-card: #4bb7e6;
+  --btn: #141414;
+  --btn-hover: #3a3a3a;
+  --text: #fbf7f7;
+}
+
+/*===== RESET =====*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-color-lighten);
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.fav {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    display: grid;
+    place-items: center;
+  }
+  
+  .svg {
+    height: 25px;
+    width: 25px;
+    fill: #fff;
+    transition: all 500ms ease;
+  }
+  
+  .fav:hover .svg {
+    fill: #000;
+  }
+  
+  @media screen and (max-width: 800px) {
+      .container {
+        width: 100%;
+        padding: 2rem 1rem; /* Adjust padding */
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  
+    .filter-container {
+      background-color: #f2f2f2;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .filter-container ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1rem;
+    }
+    
+    .filter-container li {
+      font-size: 0.9rem;
+    }
+    
+    .filter-container label {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    
+    .filter-container select {
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.3rem;
+      border: 1px solid #ccc;
+    }
+    
+    .apply-btn {
+      background-color: #4bb7e6;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+    

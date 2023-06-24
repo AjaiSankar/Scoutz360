@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js'
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+import { getFirestore, collection, getDocs,query,where } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 
 const firebaseConfig = {
   // Your Firebase configuration
@@ -20,47 +20,76 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 auth.onAuthStateChanged(async function (user) {
-  if (user) 
-  {
-    // Read data from the 'hosttournaments' collection
-    const scoutRef = collection(db, 'reqscoutdetails');
-    getDocs(scoutRef)
-    .then((querySnapshot) => {
-      // Generate HTML cards dynamically based on the retrieved data
-      var cardsContainer = document.querySelector(".row-cols-1");
-      cardsContainer.innerHTML = "";
-      querySnapshot.forEach((doc) => {
-        var scout = doc.data();
-        var card = document.createElement("div");
-        card.className = "col";
-        console.log(doc.id);
-        const docid=doc.id;
-        //sessionStorage.setItem("tournamentid", docid);
-        card.innerHTML = `
-        <section class="card">
-          <div class="product-image">
-              <img src="/Images/crciad .png" alt="Cricket" draggable="false" />
-          </div>
-            <div class="product-info">
-              <h2 class="card-title">Club Name: ${scout.clubName}</h2>
-              <p class="card-text">Place: ${scout.place}</p>
-              <p class="card-text">Role: ${scout.playerposition}</p>
-              <p class="card-text">Age group: ${scout.age}</p>
-              <p class="card-text">Play Style: ${scout.playstyle}</p>
-              <p class="card-text">Date Required: ${scout.daterequired}</p>
-              <div class="price">Rs.${scout.salary}/Match</div>
-              <div class="btn">
-                <button class="buy-btn" type="button" onclick="window.location.href='';">Apply Now</button>
-              </div>
-            </div>
-          </div>
-          </section>
-        `;
-        cardsContainer.appendChild(card);
+    if (user) {
+      // Read data from the 'reqscoutdetails' collection
+      const scoutRef = collection(db, 'reqscoutdetails');
+      getDocs(scoutRef)
+        .then((querySnapshot) => {
+          // Generate HTML cards dynamically based on the retrieved data
+  
+          // Change the selector to target the correct element
+          const cardsContainer = document.querySelector(".row");
+          cardsContainer.innerHTML = "";
+  
+          querySnapshot.forEach((doc) => {
+            const scout = doc.data();
+            const card = document.createElement("div");
+            card.className = "col";
+            const docid = doc.id;
+  
+            card.innerHTML = `
+              <section class="card">
+                <div class="product-image">
+                  <img src="/Images/crciad .png" alt="Cricket" draggable="false" />
+                </div>
+                <div class="product-info">
+                  <h2 class="card-title">Club Name: ${scout.clubName}</h2>
+                  <p class="card-text" data-filter="reqSport">${scout.reqSport}</p>
+                  <p class="card-text" data-filter="place">Place: ${scout.place}</p>
+                  <p class="card-text">Role: ${scout.playerposition}</p>
+                  <p class="card-text">Age group: ${scout.age}</p>
+                  <p class="card-text">Play Style: ${scout.playstyle}</p>
+                  <p class="card-text">Date Required: ${scout.daterequired}</p>
+                  <div class="price">Rs.${scout.salary}/Match</div>
+                  <div class="btn">
+                    <button class="buy-btn" type="button" onclick="window.location.href='';">Apply Now</button>
+                  </div>
+                </div>
+              </section>
+            `;
+  
+            cardsContainer.appendChild(card);
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting Scout Details: ", error);
+        });
+  
+      // Add event listener to filter radio buttons
+      const filterRadios = document.querySelectorAll(".filter");
+      filterRadios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          const selectedFilter = radio.dataset.filter;
+          filterCards(selectedFilter);
+        });
       });
-    })
-    .catch((error) => {
-      console.log("Error getting Scout Details: ", error);
+    }
+  });
+  
+  function filterCards(filter) {
+    const cards = document.querySelectorAll(".card");
+  
+    cards.forEach((card) => {
+      const sport = card.querySelector(".card-text[data-filter='reqSport']").textContent;
+      console.log(sport);
+      if (filter === "all" || sport === filter) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     });
   }
-});
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    // Code here will run after the DOM is fully loaded
+  });
