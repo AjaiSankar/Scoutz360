@@ -32,7 +32,7 @@ auth.onAuthStateChanged(async function (user) {
         
             // Get form values
             var clubName = document.getElementById('club-name').value;
-            var Sport = document.getElementById('sport-name').value;
+            var Sport = document.getElementById('sport-select').value;
             var place = document.getElementById('place').value;
             var playerposition = document.getElementById('player-position').value;
             var age = document.getElementById('age').value;
