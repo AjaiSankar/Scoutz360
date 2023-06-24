@@ -37,29 +37,7 @@ main {
   max-width: 100%;
 }
 
-.images-clips {
-  padding-left: 16%;
-  margin-top: 10px;
-  margin-left: 32%;
-  margin-right: 32%;
-  background-color: #ccc;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-}
 
-img {
-  max-width: 500px;
-  max-height: 500px;
-  border-radius: 10px;
-}
-
-.image-container{
-  justify-content: center;
-  text-align: center;
-  background-color: white;
-  border: 2px solid #ddd;
-}
 
 a {
   padding: 10px;
