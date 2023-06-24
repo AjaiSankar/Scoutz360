@@ -23,42 +23,44 @@ auth.onAuthStateChanged(async function (user) {
   if (user) 
   {
     // Read data from the 'hosttournaments' collection
-    const tournamentsRef = collection(db, 'hosttournamentclubs');
-    getDocs(tournamentsRef)
+    const scoutRef = collection(db, 'reqscoutdetails');
+    getDocs(scoutRef)
     .then((querySnapshot) => {
       // Generate HTML cards dynamically based on the retrieved data
       var cardsContainer = document.querySelector(".row-cols-1");
       cardsContainer.innerHTML = "";
       querySnapshot.forEach((doc) => {
-        var tournament = doc.data();
+        var scout = doc.data();
         var card = document.createElement("div");
         card.className = "col";
         console.log(doc.id);
         const docid=doc.id;
         //sessionStorage.setItem("tournamentid", docid);
         card.innerHTML = `
-          <div class="card">
-            <img src="${tournament.posterURL}" class="card-img-top" alt="${tournament.name} Poster">
-            <div class="card-body">
-              <h5 class="card-title">${tournament.tournamentName}</h5>
-              <p class="card-text">Venue: ${tournament.place}</p>
-              <p class="card-text">Date: ${tournament.date}</p>
-              <p class="card-text">Prize pool: ${tournament.prizePool}</p>
-              <p class="card-text">${tournament.conditions}</p>
-              <div class="entry-fee-box">
-                <span class="entry-fee-tag">Entry Fee</span>
-                <span class="entry-fee">${tournament.entryFee}</span>
+        <section class="card">
+          <div class="product-image">
+              <img src="/Images/crciad .png" alt="Cricket" draggable="false" />
+          </div>
+            <div class="product-info">
+              <h2 class="card-title">Club Name: ${scout.clubName}</h2>
+              <p class="card-text">Place: ${scout.place}</p>
+              <p class="card-text">Role: ${scout.playerposition}</p>
+              <p class="card-text">Age group: ${scout.age}</p>
+              <p class="card-text">Play Style: ${scout.playstyle}</p>
+              <p class="card-text">Date Required: ${scout.daterequired}</p>
+              <div class="price">Rs.${scout.salary}/Match</div>
+              <div class="btn">
+                <button class="buy-btn" type="button" onclick="window.location.href='';">Apply Now</button>
               </div>
-              <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Find/apply/apply.html?tournamentId=${docid}';">
-                Apply Now</button>
             </div>
           </div>
+          </section>
         `;
         cardsContainer.appendChild(card);
       });
     })
     .catch((error) => {
-      console.log("Error getting tournaments: ", error);
+      console.log("Error getting Scout Details: ", error);
     });
   }
 });
