@@ -13,7 +13,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="/Images/banner1.jpg" alt="">
+        <img src="/Images/bgprifile.jpg" alt="">
         <div class="text">
           <span class="text-1">Now Finding New Players<br>is a new adventure</span>
           <span class="text-2">Let's get connected</span>
@@ -31,63 +31,61 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Scout Players</div>
-            <form action="#" id="scout-form">
-              <div class="input-boxes">
-                <div class="input-box">
-                  <i class="fas fa-user"></i>
-                  <input type="text" id="club-name" name="club-name" placeholder="Club Name" required>
-                </div>
-
-                <div class="input-box">
-                  <i class="fas fa-futbol"></i>
-                  <select id="sport-select" name="sport-select" required>
-                    <option value="" disabled selected hidden>Select sport</option>
-                    <option value="Cricket">Cricket</option>
-                    <option value="Football">Football</option>
-                  </select>
-                </div>
-
-                <div class="input-box">
-                  <i class="fas fa-map-marker"></i>
-                  <input type="text" id="place" name="place" placeholder="Place" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-bolt"></i>
-                  <input type="text" id="player-position" name="player-position" placeholder="Player position/Role required" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-calendar"></i>
-                  <input type="text" id="age" name="age" placeholder="Age Group" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-male"></i>
-                  <input type="text" id="play-style" name="play-style" placeholder="Playing style" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-gift"></i>
-                  <input type="number" id="salary" name="salary" placeholder="Salary per match" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-calendar"></i>
-                  <input type="date" id="date-req" name="date-req" placeholder="Date of requirement" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-space-shuttle"></i>
-                  <input type="text" id="no-days" name="no-days" placeholder="Number of days" required>
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-check-circle"></i>
-                  <input type="text" id="conditions" name="conditions" placeholder="Any Conditions" required>
-                </div>
-                <div class="button input-box">
-                  <input type="submit" value="Scout">
-                </div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Club Name" required>
               </div>
-            </form>
+              <div class="input-box">
+                <i class="fas fa-futbol"></i>
+                <select required>
+                  <option value="" disabled selected hidden>Select sport</option>
+                  <option value="Cricket">Cricket</option>
+                  <option value="Football">Football</option>
+                </select>
+              </div>
+              
+              <div class="input-box">
+                <i class="fas fa-map-marker"></i>
+                <input type="text" placeholder="Place" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-bolt"></i>
+                <input type="text" placeholder="Player position/Role required" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-calendar"></i>
+                <input type="text" placeholder="Age Group" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-male"></i>
+                <input type="text" placeholder="Playing style" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-gift"></i>
+                <input type="number" placeholder="Salary per match" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-calendar"></i>
+                <input type="date" placeholder="Date of requirement" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-space-shuttle"></i>
+                <input type="text" placeholder="Number of days" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-check-circle"></i>
+                <input type="text" placeholder="Any Conditions" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Scout">
+              </div>
+            </div>
+        </form>
       </div>
     </div>
     </div>
   </div>
 </body>
-<script type="module" src="./firebase.js"></script>
 </html>

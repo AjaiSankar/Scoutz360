@@ -305,4 +305,31 @@ body{
       padding: 15px;
     }
   }
+  .forms .form-content .input-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    appearance: none; /* Remove default arrow icon */
+    background: transparent; /* Set background to transparent */
+  }
+  
+  .forms .form-content .input-box select:focus,
+  .forms .form-content .input-box select:valid {
+    border-color: rgb(2, 54, 78);
+  }
+  
+  .forms .form-content .input-box i {
+    position: absolute;
+    color: rgb(2, 54, 78);
+    font-size: 17px;
+    right: 10px; /* Adjust icon position */
+    top: 50%; /* Adjust icon position */
+    transform: translateY(-50%); /* Center the icon vertically */
+  }
   

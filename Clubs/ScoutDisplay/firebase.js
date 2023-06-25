@@ -43,8 +43,9 @@ auth.onAuthStateChanged(async function (user) {
                   <img src="/Images/crciad .png" alt="Cricket" draggable="false" />
                 </div>
                 <div class="product-info">
-                  <h2 class="card-title">Club Name: ${scout.clubName}</h2>
-                  <p class="card-text" data-filter="reqSport">${scout.reqSport}</p>
+                <h2 class="card-title" data-filter="reqSport">Wanted ${scout.reqSport}er</h2>
+                  <h2 class="card-title">for ${scout.clubName} Club</h2>
+                  <br>
                   <p class="card-text" data-filter="place">Place: ${scout.place}</p>
                   <p class="card-text">Role: ${scout.playerposition}</p>
                   <p class="card-text">Age group: ${scout.age}</p>
