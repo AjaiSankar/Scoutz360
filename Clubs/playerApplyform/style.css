@@ -100,23 +100,28 @@ form .form-row .textarea{
 .textarea textarea:valid ~ .underline:before{
   transform: scale(1);
 }
-.submit-btn .input-data{
+.submit-btn .input-data {
   overflow: hidden;
   height: 45px!important;
   width: 25%!important;
+  position: relative; /* Add position relative for proper z-indexing */
 }
-.submit-btn .input-data .inner{
+
+.submit-btn .input-data .inner {
   height: 100%;
   width: 300%;
   position: absolute;
   left: -100%;
+  top: 0; /* Add top position to align properly */
   background: #00133E;
   transition: all 0.4s;
 }
-.submit-btn .input-data:hover .inner{
+
+.submit-btn .input-data:hover .inner {
   left: 0;
 }
-.submit-btn .input-data input{
+
+.submit-btn .input-data button {
   background: none;
   border: none;
   color: #fff;
@@ -127,6 +132,17 @@ form .form-row .textarea{
   cursor: pointer;
   position: relative;
   z-index: 2;
+  width: 100%; /* Set button width to 100% for proper alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.submit-btn .input-data button span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateY(-2px); /* Adjust the vertical alignment */
 }
 @media (max-width: 700px) {
   .container .text{
