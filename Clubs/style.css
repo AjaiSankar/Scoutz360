@@ -13,6 +13,9 @@
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  margin-bottom: 10px;
+  
+  
 }
 
 .glow-on-hover:before {
@@ -95,11 +98,6 @@ body {
   background-color: #f7f7f7;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
 /* Club card styles */
 .club-card {
@@ -112,13 +110,104 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to the left */
   border-radius: 20px;
-  height: 300px;
+  height: 450px;
+  width: 400px;
   color: #f5f5f5;
- text-decoration: wavy;
+  text-decoration: wavy;
+  position: relative;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-top: 3%;
+  margin-right: 20px;
 }
 
+.container {
+  /* ...existing styles... */
+  display: flex; /* Use flexbox to position the club card and new container side by side */
+  justify-content: space-between; /* Add spacing between the club card and new container */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.container1 {
+  /* Styles for the new container */
+  width: 500px; /* Set the width */
+  height: 450px; /* Set the height to match the club card */
+  background-color: #5a3d3d; /* Example background color */
+  padding: 20px; /* Example padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow */
+  flex: 1; /* Allow the new container to take up remaining space */
+  background-color: #f7f7f7; /* Example background color */
+  padding: 20px; /* Example padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 3%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.column {
+  width: 100%;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+.inner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.styled-button {
+  padding: 10px 20px;
+  background-color: #00133E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+  background-color: #23527c;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
 .club-details {
   text-align: center;
@@ -227,20 +316,38 @@ body {
   overflow: hidden;
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Align items to the top */
   justify-content: center;
   border: 2px solid #fff;
   background-color: #fff;
-  position: absolute;
-  left: 10px;
-  top: 250px;
-  transform: translateY(-50%);
+  position: relative; /* Changed from absolute to relative */
+  margin-bottom: 20px; /* Added margin-bottom to create space below */
 }
-
 
 .profile-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.club-details {
+  text-align: center;
+  position: relative; /* Added position relative for z-index */
+  z-index: 1; /* Added z-index to position text above the profile image */
+}
+
+.club-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff; /* Added text color */
+}
+
+.club-info {
+  margin-bottom: 10px;
+  color: #fff; /* Added text color */
+  font-size: 18px; /* Increased font size for better readability */
 }

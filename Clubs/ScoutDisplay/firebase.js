@@ -46,7 +46,6 @@ auth.onAuthStateChanged(async function (user) {
                 <h2 class="card-title" data-filter="reqSport">Wanted ${scout.reqSport}er</h2>
                   <h2 class="card-title">for ${scout.clubName} Club</h2>
                   <br>
-                  <p class="card-text" data-filter="reqSport">${scout.reqSport}</p>
                   <p class="card-text" data-filter="place">Place: ${scout.place}</p>
                   <p class="card-text">Role: ${scout.playerposition}</p>
                   <p class="card-text">Age group: ${scout.age}</p>
@@ -54,7 +53,7 @@ auth.onAuthStateChanged(async function (user) {
                   <p class="card-text">Date Required: ${scout.daterequired}</p>
                   <div class="price">Rs.${scout.salary}/Match</div>
                   <div class="btn">
-                    <button class="buy-btn" type="button" onclick="window.location.href='../playerApplyform/index.html?reqscoutId=${docid}';">Apply Now</button>
+                    <button class="buy-btn" type="button" onclick="window.location.href='';">Apply Now</button>
                   </div>
                 </div>
               </section>
