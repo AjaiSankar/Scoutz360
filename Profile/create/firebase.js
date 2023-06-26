@@ -37,6 +37,7 @@ auth.onAuthStateChanged(async function (user) {
             var PState = document.getElementById('state').value;
             var PDistrict = document.getElementById('district').value;
             var PMobile = document.getElementById('mobile-number').value;
+            var Email = document.getElementById('email-id').value;
             var PDP = document.getElementById('profile-picture').files[0];
         
             // Create a new document in Firestore
@@ -48,6 +49,7 @@ auth.onAuthStateChanged(async function (user) {
                 PState: PState,
                 PDistrict: PDistrict,
                 PMobile: PMobile,
+                Email: Email,
                 userid: user.uid
             }).then(function(docRef) {
                 // Document successfully added
