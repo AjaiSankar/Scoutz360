@@ -101,10 +101,6 @@ auth.onAuthStateChanged(async function (user) {
 
             // Create a link element for the user name
             const userLink = document.createElement("a");
-            // sessionStorage.setItem("otherUserId", userId);
-            //userLink.href = "./otherprofile/index.html"; // Update the URL as needed
-            //userLink.textContent = userName;
-
             userLink.href = `./otherprofile/index.html?userId=${userId}`; // Include the userId in the URL
             userLink.textContent = userName;
 
