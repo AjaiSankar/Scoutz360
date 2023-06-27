@@ -36,7 +36,7 @@ auth.onAuthStateChanged(async function (user) {
             const card = document.createElement("div");
             card.className = "col";
             const docid = doc.id;
-  
+            console.log(docid);
             card.innerHTML = `
               <section class="card">
                 <div class="product-image">
@@ -53,7 +53,7 @@ auth.onAuthStateChanged(async function (user) {
                   <p class="card-text">Date Required: ${scout.daterequired}</p>
                   <div class="price">Rs.${scout.salary}/Match</div>
                   <div class="btn">
-                    <button class="buy-btn" type="button" onclick="window.location.href='';">Apply Now</button>
+                    <button class="buy-btn" type="button" onclick="window.location.href='../playerApplyform/index.html?reqscoutId=${docid}';">Apply Now</button>
                   </div>
                 </div>
               </section>

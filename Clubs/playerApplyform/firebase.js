@@ -22,7 +22,7 @@ auth.onAuthStateChanged(async function (user) {
     {
         // const tid=sessionStorage.getItem("tournamentid");
         // console.log(tid);
-
+        console.log(user.uid);
         const urlParams = new URLSearchParams(window.location.search);
         // Retrieve the userId parameter
         const reqscoutId = urlParams.get('reqscoutId');
@@ -30,7 +30,7 @@ auth.onAuthStateChanged(async function (user) {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             
-            const experience = form['experience'].value;
+            const pname = form['name'].value;
             const age = form['age'].value;
             const extradetails = form['extradata'].value;
             const userid = user.uid;
@@ -38,7 +38,7 @@ auth.onAuthStateChanged(async function (user) {
             try {
 
                 const docRef = await addDoc(collection(db, 'ReqScoutApplications'), {
-                    experience,
+                    pname,
                     age,
                     extradetails,
                     userid,
