@@ -34,10 +34,12 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
+    
 }
 
 .video-card {
     margin-bottom: 20px;
+    border: 1px solid #007bff;
 }
 
 .video-container {
@@ -45,6 +47,7 @@ body {
     overflow: hidden;
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+    
 }
 
 .video-container video {
@@ -313,7 +316,7 @@ body {
   border-radius: 5px; /* Optional: Add border radius for rounded corners */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Add box shadow for a subtle effect */
   width: calc(100% - 40px); /* Set width to occupy 50% of the parent container minus margins */
-  background-color: #3db3c5;
+  background-color: white;
 }
 
 .photo-card .photo {
