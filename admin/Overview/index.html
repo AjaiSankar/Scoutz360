@@ -1,85 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<style>
-  
-    .pr{
-        width: 500px;
-        height: 600px;
-    }
-    .mainc{
-        display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;   
-    }
-</style>
 <body>
-    <div class="mainc">
+  <div class="mainc">
     <h1>Profile Overview</h1>
 
     <div class="pr">
-        <canvas id="profilesChart"></canvas>
+      <canvas id="profilesChart"></canvas>
     </div>
 
-    <h1>Tournamnet Overview</h1>
+    <h1>Tournament Overview</h1>
     <div class="pr">
-        <canvas id="tournamentsChart"></canvas>
+      <canvas id="tournamentsChart"></canvas>
     </div>
-</div>
-    <script>
-        // Sample data for demonstration purposes
-        const profileData = {
-  labels: ['Players', 'Clubs', 'Academies'],
-  datasets: [
-    {
-      label: 'Profiles',
-      data: [100, 150, 200],
-      backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 99, 132, 0.6)'],
-    }
-  ]
-};
+  </div>
 
-        const tournamentsData = {
-            labels: ['hosted', 'Applicants'],
-            datasets: [
-                {
-                    label: 'Tournaments',
-                    data: [2, 15],
-                    backgroundColor: ['rgba(54, 162, 235, 0.6)','rgba(54, 162, 235, 0.6)'],
-                }
-            ]
-        };
+  <script>
+    // Sample data for demonstration purposes
+    const profileData = {
+      labels: ["Players", "Clubs", "Academies"],
+      datasets: [
+        {
+          label: "Profiles",
+          data: [0, 0, 0], // Placeholder initial data
+          backgroundColor: [
+            "rgba(75, 192, 192, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+          ],
+        },
+      ],
+    };
 
+    const tournamentsData = {
+      labels: ["Hosted", "Applicants"],
+      datasets: [
+        {
+          label: "Tournaments",
+          data: [0, 0], // Placeholder initial data
+          backgroundColor: [
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+          ],
+        },
+      ],
+    };
 
-        // Create the charts
-        const profilesChart = new Chart(document.getElementById('profilesChart'), {
-            type: 'pie',
-            data: profileData,
-        });
+    // Create the charts
+    const profilesChart = new Chart(document.getElementById("profilesChart"), {
+      type: "pie",
+      data: profileData,
+    });
 
-        const tournamentsChart = new Chart(document.getElementById('tournamentsChart'), {
-            type: 'bar',
-            data: tournamentsData,
-        });
-
-        const playersChart = new Chart(document.getElementById('playersChart'), {
-            type: 'bar',
-            data: playersData,
-        });
-
-        const clubsChart = new Chart(document.getElementById('clubsChart'), {
-            type: 'line',
-            data: clubsData,
-        });
-    </script>
+    const tournamentsChart = new Chart(document.getElementById("tournamentsChart"), {
+      type: "bar",
+      data: tournamentsData,
+    });
+  </script>
+  <script type="module" src="./firebase.js"></script>
 </body>
 </html>
