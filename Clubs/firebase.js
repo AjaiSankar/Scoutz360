@@ -63,7 +63,7 @@ auth.onAuthStateChanged(async function (user) {
 
         // Update the player name and sport played
         const profileName = ClubDetailsContainer.querySelector(".club-info");
-        profileName.innerHTML = `<strong><span style="font-size: 24px;">${clubName}</span></strong><br>${sportPlayed}<br>Place: ${District}, ${State}<br>Coach: ${coachName}<br>Captain: ${captainName}<br>Contact us: ${phoneNumber}`;
+        profileName.innerHTML = `<strong><span class="heading" style="font-size: 24px; text-align:center">${clubName}</span></strong><br>${sportPlayed}<br>Place: ${District}, ${State}<br>Coach: ${coachName}<br>Captain: ${captainName}<br>Contact us: ${phoneNumber}`;
       });
     });
 

@@ -7,85 +7,81 @@
   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Clubs Page</title>
+  <style>
+    .navbar-custom {
+        margin-top: 0;
+        min-width: -webkit-fill-available;
+        height: 60px;
+        opacity: 80%;
+    }
+</style>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Scoutz360</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Clubs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tournaments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Academies</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          <button>Logout</button>
-        </span>
-      </div>
+        <a class="navbar-brand" href="#">Scoutz360</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Clubs/ScoutDisplay/scoutad.html">Clubs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Academies/index.html">Academies</a>
+                </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-profile-type="clubs" id="profile-type">My Profile</a>
+        </li>
+            </ul>
+            <span class="navbar-text">
+                <button class="glow-on-hover" style="width: 70px; border-radius: 70%; height: 30px;">Login</button>
+            </span>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <div class="container">
     <div class="club-card">
       <div class="club-details">
         <div class="profile-image">
-          <img src="" alt="Profile Picture" width="100">
+          <img src="" alt="Profile Picture">
         </div>
         <div class="club-info"></div>
       </div>
-
-    <div class="button-container">
-      <button class="glow-on-hover" type="button" onclick="window.location.href='/Tournaments/Host/host.html';">
-        Host New TOURNAMENT!
-      </button>
-
-      <button class="glow-on-hover" type="button" onclick="window.location.href='/Clubs/Scout/scout.html';">
-        Scout Players!
-      </button>
-
-      <button class="glow-on-hover" type="button" onclick="window.location.href='/Clubs/ScoutDisplay/scoutad.html';">
-        View Scouting Ads!
-      </button>
-
-    </div>
     
   </div>
   <div class="container1">
     <div class="row">
       <div class="column">
         <div class="inner-container">
-          <img src="image1.jpg" alt="Image 1" width="200">
-          <button class="styled-button">Button 1</button>
+          <img src="/Images/host.png" alt="Image 1" width="200">
+          <button class="styled-button" onclick="window.location.href='/Tournaments/Host/host.html';">Host Tournament</button>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="column">
         <div class="inner-container">
-          <img src="image2.jpg" alt="Image 2" width="200">
-          <button class="styled-button">Button 2</button>
+          <img src="/Images/apply.png" alt="Image 2" width="200">
+          <button class="styled-button" onclick="window.location.href='/Clubs/DisplayTournament/index.html';">View Tournaments</button>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="column">
         <div class="inner-container">
-          <img src="image3.jpg" alt="Image 3" width="200">
-          <button class="styled-button">Button 3</button>
+          <img src="/Images/scout.png" alt="Image 3" width="200">
+          <button class="styled-button" onclick="window.location.href='/Clubs/ScoutDisplay/scoutad.html';">View Players</button>
         </div>
       </div>
     </div>
@@ -97,23 +93,12 @@
           height: 100px;
           object-fit: cover;
           margin-right: 10px;">
-          <button class="styled-button">Button 4</button>
+          <button class="styled-button" onclick="window.location.href='/Clubs/Scout/scout.html';">Post Scouting</button>
         </div>
       </div>
     </div>
   </div>
-  
 
-</div>
-
-<div class="tournaments-section"></div>
-
-
-
-
-    
-
-  <script type="module" src="./firebase.js"></script>
 </body>
-
+<script type="module" src="./firebase.js"></script>
 </html>
