@@ -78,7 +78,7 @@ body {
 }
 
 .header {
-  background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+  background: linear-gradient(-45deg, #3db3c5, #274685);
   color: #FFF;
   padding: 5px;
   text-align: center;
@@ -260,7 +260,7 @@ body {
 }
 
 .profilenavbar {
-  background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%); /* Replace with your desired gradient colors */
+  background: linear-gradient(-45deg, #3db3c5, #274685); /* Replace with your desired gradient colors */
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -354,7 +354,7 @@ body {
     font-size: 14px;
     cursor: pointer;
     color: #fff;
-    background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+    background: linear-gradient(-45deg, #3db3c5, #274685);
     border-radius: 4px;
   }
   
@@ -458,7 +458,7 @@ body {
   .buttons-container .contact-info-button,
   .buttons-container .player-skills-button {
     background-color: rgba(2, 54, 78, 1);
-    background-image: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+    background-image: linear-gradient(-45deg, #3db3c5, #274685);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -617,3 +617,81 @@ body {
   
   
  
+.glow-on-hover {
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: rgb(2, 54, 78);
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+.glow-on-hover:before {
+	content: '';
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.glow-on-hover:active {
+	color: rgb(2, 54, 78);
+}
+
+.glow-on-hover:active:after {
+	background: transparent;
+}
+
+.glow-on-hover:hover:before {
+	opacity: 1;
+}
+
+.glow-on-hover:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(2, 54, 78);
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}

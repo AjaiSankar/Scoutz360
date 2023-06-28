@@ -7,9 +7,10 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+  background: linear-gradient(-45deg, #3db3c5, #274685);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 3%;
 }
 h1 {
   text-align: center;
