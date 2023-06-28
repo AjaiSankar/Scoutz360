@@ -13,6 +13,15 @@ header {
   align-items: center;
 }
 
+.button-icon {
+  display: inline-block;
+  margin-right: 5px; /* Adjust the margin as per your preference */
+  vertical-align: middle;
+  max-height: 50px;
+  max-width: 50px;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
