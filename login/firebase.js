@@ -34,8 +34,9 @@ document.getElementById("login").addEventListener("click", function (event) {
       // Redirect to the desired page
       //window.location.href = "./student/index.html";
       sessionStorage.setItem("uid", user.uid);
-      if(user.uid=='5w3QtqWjjSOazqmwX7teQEEPB6k2'){
-        window.location.href = "./test/index.html";
+      if(user.uid=='vcC4gzvhRRhLgfXT5CluugnWk7j1'){
+        //admin log in
+        window.location.href = "../../admin/AcademyManage/index.html";
       }
       else{
         window.location.href = "./Feed/index.html";

@@ -36,7 +36,7 @@
 					  </li>
                 </ul>
                 <span class="navbar-text">
-                    <button class="glow-on-hover" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
+                    <button class="glow-on-hover" id="logout" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
                 </span>
             </div>
         </div>
@@ -109,7 +109,7 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-
+</body>
     <script>
         const profilePictureInput = document.getElementById('profile-picture');
         const fileInfo = document.getElementById('file-info');
@@ -134,7 +134,7 @@
 
             ageInput.value = years + ' years, ' + months + ' months, ' + days + ' days';
         });
-    </script>
-    <script type="module" src="./firebase.js"></script>
-</body>
+</script>
+<script type="module" src="./firebase.js"></script>
+<script type="module" src="/navbar.js"></script>
 </html>
