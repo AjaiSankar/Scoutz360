@@ -36,48 +36,148 @@
           </div>
         </div>
     </nav>
-    <div class="header">
-        <h1>My Portfolio</h1>
-    </div>
+
     <div class="profile-container">
-        <div class="profile-image">
-            <img src="../Images/vivek.jpg" alt="Profile Picture" width="200">
-        </div>
-        <div class="profile-name">
-            Vivekananad R
-            <br>
-            Footballer
+        <div class="player-details">
+            <button class="edit-button">Edit</button>
+             
+              <div class="upload-popup">
+                <button class="close-button">Close</button>
+                <input type="file" class="upload-input">
+                <button class="upload-button">Upload</button>
+              </div>
+              <div class="profile-name"></div>
+            <div class="profile-image">
+                <img src="" alt="Profile Picture" >
+            </div>
         </div>
         
-        <nav class="navbar">
-            <a href="#" class="navbar-logo">Vivek17</a>
-            <ul class="navbar-menu">
-                <li class="navbar-item" ac><a href="/Profile/index.html" class="navbar-link">My Profile</a></li>
-                <li class="navbar-item"><a href="/Profile/photos.html" class="navbar-link">Photos</a></li>
-                <li class="navbar-item"><a href="/Profile/videos.html" class="navbar-link">Videos</a></li>
-                <li class="navbar-item"><a href="/Profile/profilecard.html" class="navbar-link">My Profile Card</a></li>
-                <li class="navbar-item"><a href="/Profile/upload/index.html" class="navbar-link">Upload</a></li>
-            </ul>
-        </nav>
-        <div class="profile-card">
-            <h2>About</h2>
-            <p>A passionate football defender with the vision of keeping opponents away from the goal </p>
-        </div>
-        <div class="profile-card">
-            <h2>Experience</h2>
-            <ul>
-                <li>Played 20 games for xyz club</li>
-                <li>Played 52 games for abc club</li>
-            </ul>
-        </div>
-        <div class="profile-card">
-            <h2>Achievements</h2>
-            <ul>
-                <li>Received Player of the Tournament in Abc championship</li>
-                <li>Best Defender Award</li>
-            </ul>
-        </div>
+    
+
+  <div class="buttons-container">
+   
+    <button class="contact-info-button">Contact Info</button>
+    <div class="player-position">Batting Allrounder</div>
+    <button class="player-skills-button">Player Skills</button>
+  </div>
+  
+  
+
+  <!-- <div class="popup contact-info-popup">
+    <h2 class="popup-title">Ajai Sankar Hareesh</h2>
+    <div class="underline"></div>
+    <div class="popup-content">
+      <div class="contact-info-item">
+        <svg class="contact-info-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#F44336" d="M21.3 3H2.7C1.04 3 0 4.04 0 5.7v12.6C0 19.96 1.04 21 2.7 21h18.6c1.66 0 2.7-1.04 2.7-2.7V5.7C24 4.04 22.96 3 21.3 3zm0 14.3H2.7V7.04l9.3 5.8 9.3-5.8V17.3zm0-12.58L12 10.3 2.7 4.72V5.7L12 11l9.3-5.3v-.98zM2.7 5.7v.98L12 10.3l9.3-3.62v-.98H2.7z"/>
+        </svg>
+        <span class="contact-label">Email:</span>
+        <span class="contact-value">ajaisankar@gmail.com</span>
+      </div>
+      <div class="contact-info-item">
+        <img class="contact-info-icon" src="/Images/phone.png" alt="Phone Icon" width="24" height="24">
+        <span class="contact-label">Phone:</span>
+        <span class="contact-value">9995625369</span>
+        <div class="contact-info-value"></div>
+      </div>
+      <div class="contact-info-item">
+        <img class="contact-info-icon" src="/Images/25530.jpg" alt="Place Icon" width="24" height="24">
+        <span class="contact-label">Place:</span>
+        <span class="contact-value">Kottayam</span>
+        <div class="contact-info-value"></div>
+      </div>
     </div>
+    <button class="close-popup">Close</button>
+  </div> -->
+
+  <div class="popup contact-info-popup">
+    <div class="popup-content">
+        <!-- Content goes here -->
+    </div>
+    <button class="close-popup">Close</button>
+</div>
+
+
+
+  <div class="popup player-skills-popup">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 1">
+        <div class="skill-label">Skill 1</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      
+      <!-- Add more skill items as needed -->
+    </div>
+    <div class="add-skill-form" style="display: none;">
+      <h3>Add New Skill</h3>
+      <input type="text" class="add-skill-input" placeholder="Enter a new skill">
+      <button class="add-skill-button">Add</button>
+      <button class="cancel-skill-button">Cancel</button>
+    </div>
+  
+    <button class="add-skill-button">Add More Skills</button>
+    <button class="close-popup">Close</button>
+  </div>
+
+
+  <br><br>
+<!-- ----------------------Profile navbar--------------------------->
+  <nav class="profilenavbar">
+    <ul class="profilenavbar-menu">
+        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">My Profile</a></li>
+        <li class="profilenavbar-item"><a href="./profphotos/photos.html" class="profilenavbar-link">Photos</a></li>
+        <li class="profilenavbar-item"><a href="./profvideos/videos.html" class="profilenavbar-link">Videos</a></li>
+        <li class="profilenavbar-item"><a href="./profcards/profilecard.html" class="profilenavbar-link">My Profile Card</a></li>
+    </ul>
+</nav>
+<!-- ----------------------Profile navbar--------------------------->
+<br>
+
+<div class="profile-card">
+  <div class="edit-icon">
+      <span class="edit-icon-wrapper">
+        
+          <h2>About</h2>
+          <button class="extra-button" onclick="window.location.href='/Profile/experience/index.html'">Edit About</button>
+    <br><br>
+    
+  </div>
+  <p>A passionate football defender with the vision of keeping opponents away from the goal</p>
+</div>
+
+<div class="profile-card">
+    <h2>Experience</h2>
+    <button class="extra-button" onclick="window.location.href='/Profile/experience/index.html'">Add Experience</button>
+    <br><br>
+    <ul>
+        
+    </ul>
+</div>
+<div class="profile-card">
+    <h2>Achievements</h2>
+    <button class="extra-button" onclick="window.location.href='/Profile/achievements/index.html'">Add Achievement</button>
+    <br><br>
+    <div class="container">
+    </div>
+</div>
+
     <div class="chat-button">Chat</div>
     <div class="chat-container">
         <div class="chat-header">
@@ -101,24 +201,7 @@
         </div>
     </div>
 
-    <script>
-        // Chat functionality here
-
-        const chatButton = document.querySelector('.chat-button');
-        const chatContainer = document.querySelector('.chat-container');
-        const chatClose = document.querySelector('.chat-close');
-
-        // Open chat container when chat button is clicked
-        chatButton.addEventListener('click', () => {
-            chatContainer.style.display = 'block';
-        });
-
-        // Close chat container when close button is clicked
-        chatClose.addEventListener('click', () => {
-            chatContainer.style.display = 'none';
-        });
-        
-    </script>
+    <script typr="module" src="./other.js"></script>
     <script type="module" src="./firebase.js"></script>
 </body>
-</html
+</html>

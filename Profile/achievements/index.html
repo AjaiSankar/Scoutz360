@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Achievements Submission</title>
+  <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+
+    <div class="form-details">
+      <h1>Achievements Submission</h1>
+      <p>Share your playing achievements with us!</p>
+      <form id="achievementsdata">
+        <label for="achievement">Achievement Details:</label><br>
+        <textarea id="achievement" name="achievement" rows="4" cols="50" required></textarea><br>
+        <label for="certificate">Certificate (Upload as Image format):</label>
+        <input type="file" id="certificate" name="certificate" accept="image/*"><br><br><br>
+        <input type="submit" value="Submit" style= "background-color: #002E5A;;">
+      </form>
+    </div>
+  </div>
+  <script type="module" src="./firebase.js"></script>
+</body>
+</html>
