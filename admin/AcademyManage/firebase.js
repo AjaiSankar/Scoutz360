@@ -50,15 +50,16 @@ auth.onAuthStateChanged(async function (user) {
       const sport = document.getElementById("sport").value;
       const place = document.getElementById("place").value;
       const location = document.getElementById("location").value;
+      const mobile = document.getElementById("mobile-number").value;
       const academyFee = document.getElementById("academy-fee").value;
 
       // Create a new document in the "academies" collection
-      db.collection("academies")
-        .add({
+      addDoc(collection(db, 'academies'),{
           academyName: academyName,
           sport: sport,
           place: place,
           location: location,
+          mobileNumber: mobile,
           academyFee: academyFee,
         })
         .then(() => {

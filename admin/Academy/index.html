@@ -22,124 +22,23 @@
 
 	 
 <h1 class="page-heading">Manage Academies</h1>
-<button class="floating-btn">
+<button class="floating-btn" onclick="location.href='/admin/AcademyManage/index.html'">
 	Add New Academy
 </button>
 
-<div class="courses-container">
-	<div class="course">
-		<div class="course-preview">
-			<h6>Cricket and Football</h6>
-			<h2>Etumanoor Sports Academy</h2>
-			<a href="#" onclick="showContactPopup()">View Contact <i class="fas fa-chevron-right"></i></a>
-
-		</div>
-		<div class="course-info">
-			<h6>Experienced Training</h6>
-			<h2>Improve your skills and get scouted easily.</h2>
-			<h4>Daily and Weekly training batches</h4>
-            <button type="reset">Edit</button>
-            <button>Delete</button>
-			<button class="btn">Rs 2500/Month</button>
-		</div>
-	</div>
+<div id="coursesContainer">
+	
 </div>
+
 <div id="contactPopup" class="popup">
-	<div class="popup-content">
-	  <h2>EISA Academy</h2>
-	  <p>Etumanoor Junctiom</p>
-	  <p>Opposite TVS Motors</p>
-	  <p>Phone: 9998744563</p>
-	  <!-- Add more contact details if needed -->
-	  <a href="#" onclick="hideContactPopup()">Close</a>
-	</div>
-</div>
-
-<div class="courses-container">
-	<div class="course">
-		<div class="course-preview">
-			<h6>Cricket and Football</h6>
-			<h2>Etumanoor Sports Academy</h2>
-			<a href="#" onclick="showContactPopup()">View Contact <i class="fas fa-chevron-right"></i></a>
-
-		</div>
-		<div class="course-info">
-			<h6>Experienced Training</h6>
-			<h2>Improve your skills and get scouted easily.</h2>
-			<h4>Daily and Weekly training batches</h4>
-            <button type="reset">Edit</button>
-            <button>Delete</button>
-			<button class="btn">Rs 2500/Month</button>
-		</div>
-	</div>
-</div>
-<div id="contactPopup" class="popup">
-	<div class="popup-content">
-	  <h2>EISA Academy</h2>
-	  <p>Etumanoor Junctiom</p>
-	  <p>Opposite TVS Motors</p>
-	  <p>Phone: 9998744563</p>
-	  <!-- Add more contact details if needed -->
-	  <a href="#" onclick="hideContactPopup()">Close</a>
-	</div>
-</div>
-
-
-<div class="courses-container">
-	<div class="course">
-		<div class="course-preview">
-			<h6>Cricket and Football</h6>
-			<h2>Etumanoor Sports Academy</h2>
-			<a href="#" onclick="showContactPopup()">View Contact <i class="fas fa-chevron-right"></i></a>
-
-		</div>
-		<div class="course-info">
-			<h6>Experienced Training</h6>
-			<h2>Improve your skills and get scouted easily.</h2>
-			<h4>Daily and Weekly training batches</h4>
-			<button class="btn">Rs 2500/Month</button>
-		</div>
-	</div>
-</div>
-<div id="contactPopup" class="popup">
-	<div class="popup-content">
-	  <h2>EISA Academy</h2>
-	  <p>Etumanoor Junctiom</p>
-	  <p>Opposite TVS Motors</p>
-	  <p>Phone: 9998744563</p>
-	  <!-- Add more contact details if needed -->
-	  <a href="#" onclick="hideContactPopup()">Close</a>
-	</div>
-</div>
-
-
-<div class="courses-container">
-	<div class="course">
-		<div class="course-preview">
-			<h6>Cricket and Football</h6>
-			<h2>Etumanoor Sports Academy</h2>
-			<a href="#" onclick="showContactPopup()">View Contact <i class="fas fa-chevron-right"></i></a>
-
-		</div>
-		<div class="course-info">
-			<h6>Experienced Training</h6>
-			<h2>Improve your skills and get scouted easily.</h2>
-			<h4>Daily and Weekly training batches</h4>
-			<button class="btn">Rs 2500/Month</button>
-		</div>
-	</div>
-</div>
-<div id="contactPopup" class="popup">
-	<div class="popup-content">
-	  <h2>EISA Academy</h2>
-	  <p>Etumanoor Junctiom</p>
-	  <p>Opposite TVS Motors</p>
-	  <p>Phone: 9998744563</p>
-	  <!-- Add more contact details if needed -->
-	  <a href="#" onclick="hideContactPopup()">Close</a>
-	</div>
-</div>
-
+    <div class="popup-content">
+      <h2></h2>
+      <p></p>
+      <p></p>
+      <p></p>
+      <a href="#" onclick="hideContactPopup()">Close</a>
+    </div>
+  </div>
 
 </body>
 <script>
@@ -152,5 +51,5 @@ function hideContactPopup() {
 }
 
 </script>
-
+<script type="module" src="./firebase.js"></script>
 </html>

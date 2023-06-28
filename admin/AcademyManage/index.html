@@ -13,14 +13,13 @@
 
    </head>
 <body>
-
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
         <img src="/Images/bgprifile.jpg" alt="">
         <div class="text">
-          <span class="text-1">Add Academies<br>and help palyers</span>
+          <span class="text-1">Add Academies<br>and help players</span>
           <span class="text-2">achieve their dreams!</span>
         </div>
       </div>
@@ -33,9 +32,9 @@
       </div>
     </div>
     <div class="forms">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Academy Add</div>
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Academy Add</div>
           <form id="academy-data" action="#">
             <div class="input-boxes">
               <div class="input-box">
@@ -44,33 +43,37 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-futbol"></i>
-                <select required>
+                <select id="sport" required>
                   <option value="" disabled selected hidden>Select sport</option>
                   <option value="Cricket">Cricket</option>
                   <option value="Football">Football</option>
-                  <option value="Both">Both</option>
+                  <option value="Cricket and Football">Both</option>
                 </select>
               </div>
-              
+
               <div class="input-box">
                 <i class="fas fa-map-marker"></i>
-                <input type="text" placeholder="Place" required>
+                <input type="text" id="place" placeholder="Place" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-location"></i>
-                <input type="text" placeholder="Place" required>
+                <input type="text" id="location" placeholder="Location" required>
+              </div>
+              <div class="input-box">
+                
+                <input type="text" id="mobile-number" placeholder="Phone Number" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-dollar"></i>
-                <input type="number" placeholder="Academy fee" required>
+                <input type="number" id="academy-fee" placeholder="Academy fee" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Add">
               </div>
             </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </body>
