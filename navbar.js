@@ -40,11 +40,11 @@ auth.onAuthStateChanged(async function (user) {
       switch (type) {
         case "club":
           console.log("Club");
-          window.location.href = "../../Clubs/index.html";
+          window.location.href = "/Clubs/index.html";
           break;
         case "player":
           console.log("Player");
-          window.location.href = "../../Profile/index.html";
+          window.location.href = "/Profile/index.html";
           break;
         default:
             console.log("User type not found");
@@ -83,6 +83,19 @@ auth.onAuthStateChanged(async function (user) {
           console.log("Error listening to users collection:", error);
         }
       );
+    });
+    document.getElementById("logout").addEventListener("click", function (event) {
+      event.preventDefault();
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('Sign-out successful.');
+        alert('Sign-out successful.');
+        window.location.href = "/login/index.html";
+
+      }).catch((error) => {
+        // An error happened.
+        console.log('An error happened.');
+      });
     });
   }
 });

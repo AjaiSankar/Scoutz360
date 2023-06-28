@@ -84,5 +84,17 @@ auth.onAuthStateChanged(async function (user) {
         }
       );
     });
+    document.getElementById("logout").addEventListener("click", function (event) {
+      event.preventDefault();
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('Sign-out successful.');
+        alert('Sign-out successful.');
+
+      }).catch((error) => {
+        // An error happened.
+        console.log('An error happened.');
+      });
+    });
   }
 });
