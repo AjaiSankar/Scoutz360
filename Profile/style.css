@@ -34,10 +34,12 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
+    
 }
 
 .video-card {
     margin-bottom: 20px;
+    border: 1px solid #007bff;
 }
 
 .video-container {
@@ -45,6 +47,7 @@ body {
     overflow: hidden;
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+    
 }
 
 .video-container video {
@@ -124,7 +127,7 @@ body {
   }
   
   .player-details {
-    background-image: url("/Images/banner1.jpg");
+    background-image: url("/Images/bgprifile.jpg");
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -300,28 +303,35 @@ body {
 
 
 
-.photos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .photo-card {
-    margin: 20px;
-    text-align: center;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #000; /* Add border properties */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Add box shadow for a subtle effect */
+  width: calc(100% - 40px); /* Set width to occupy 50% of the parent container minus margins */
+  background-color: white;
 }
 
 .photo-card .photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
 }
 
 .photo-card .photo img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
+
 
   .container {
     display: flex;

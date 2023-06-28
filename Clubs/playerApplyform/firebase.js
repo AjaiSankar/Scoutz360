@@ -30,7 +30,7 @@ auth.onAuthStateChanged(async function (user) {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             
-            const experience = form['experience'].value;
+            const name = form['name'].value;
             const age = form['age'].value;
             const extradetails = form['extradata'].value;
             const userid = user.uid;
@@ -38,7 +38,7 @@ auth.onAuthStateChanged(async function (user) {
             try {
 
                 const docRef = await addDoc(collection(db, 'ReqScoutApplications'), {
-                    experience,
+                    name,
                     age,
                     extradetails,
                     userid,

@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/login/Feed/index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
@@ -38,7 +38,7 @@
         </li>
             </ul>
             <span class="navbar-text">
-                <button class="glow-on-hover" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
+                <button class="glow-on-hover" id="logout" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
             </span>
         </div>
     </div>
@@ -54,7 +54,7 @@
       <!-- Firebase will populate the cards dynamically here -->
     </div>
   </div>
-  <script type="module" src="/Tournaments/Find/firebase.js"></script>
 </body>
-
+<script type="module" src="/Tournaments/Find/firebase.js"></script>
+<script type="module" src="/navbar.js"></script>
 </html>

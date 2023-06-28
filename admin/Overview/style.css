@@ -1,0 +1,12 @@
+.pr {
+  width: 500px;
+  height: 600px;
+}
+.mainc {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
