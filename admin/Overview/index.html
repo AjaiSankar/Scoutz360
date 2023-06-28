@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    canvas{
+        width:500px;
+        height: 600px;
+    }
+</style>
+<body>
+    <h1>Profile Overview</h1>
+
+    <div>
+        <canvas id="profilesChart"></canvas>
+    </div>
+    <h1>Tournamnet Overview</h1>
+    <div>
+        <canvas id="tournamentsChart"></canvas>
+    </div>
+    <script>
+        // Sample data for demonstration purposes
+        const profileData = {
+            labels: ['Players', 'Clubs', 'Academies'],
+            datasets: [
+                {
+                    label: 'Profiles',
+                    data: [100, 150, 200],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                }
+            ]
+        };
+
+        const tournamentsData = {
+            labels: ['hosted', 'Applicants'],
+            datasets: [
+                {
+                    label: 'Tournaments',
+                    data: [2, 15],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                }
+            ]
+        };
+
+
+        // Create the charts
+        const profilesChart = new Chart(document.getElementById('profilesChart'), {
+            type: 'bar',
+            data: profileData,
+        });
+
+        const tournamentsChart = new Chart(document.getElementById('tournamentsChart'), {
+            type: 'bar',
+            data: tournamentsData,
+        });
+
+        const playersChart = new Chart(document.getElementById('playersChart'), {
+            type: 'bar',
+            data: playersData,
+        });
+
+        const clubsChart = new Chart(document.getElementById('clubsChart'), {
+            type: 'line',
+            data: clubsData,
+        });
+    </script>
+</body>
+</html>
