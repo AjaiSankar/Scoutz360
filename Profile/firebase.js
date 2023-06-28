@@ -168,7 +168,7 @@ auth.onAuthStateChanged(async function (user) {
         const placeElement = document.createElement("div");
         placeElement.classList.add("contact-info-item");
         placeElement.innerHTML = `
-      <img class="contact-info-icon" src="/Images/25530.jpg" alt="Place Icon" width="24" height="24">
+      <img class="contact-info-icon" src="/Images/place.jpg" alt="Place Icon" width="24" height="24">
       <span class="contact-label">Place:</span>
       <span class="contact-value">${PDistrict}</span>
     `;
