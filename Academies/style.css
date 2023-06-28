@@ -4,9 +4,8 @@
 	box-sizing: border-box;
 }
 
-
 body {
-	background-image: linear-gradient(90deg, rgba(2, 54, 78, 1) 0%, rgba(2, 164, 127, 1) 83%);
+	background: linear-gradient(-45deg, #3db3c5, #274685);
 	font-family: 'Muli', sans-serif;
 	display: flex;
 	align-items: center;
@@ -14,10 +13,6 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-}
-
-.courses-container {
-	
 }
 
 .course {
@@ -124,10 +119,10 @@ body {
 	transform: translateX(-10px);
 }
 
-.social-panel {	
+.social-panel {
 	background-color: #fff;
 	border-radius: 16px;
-	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
+	box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
 	border: 5px solid #001F61;
 	display: flex;
 	flex-direction: column;
@@ -135,7 +130,7 @@ body {
 	align-items: center;
 	font-family: 'Muli';
 	position: relative;
-	height: 169px;	
+	height: 169px;
 	width: 370px;
 	max-width: calc(100% - 10px);
 }
@@ -181,9 +176,9 @@ body {
 
 .social-panel h4 {
 	margin: 20px 0;
-	color: #97A5CE;	
-	font-family: 'Muli';	
-	font-size: 14px;	
+	color: #97A5CE;
+	font-family: 'Muli';
+	font-size: 14px;
 	line-height: 18px;
 	text-transform: uppercase;
 }
@@ -261,14 +256,120 @@ body {
 	text-decoration: none;
 }
 
+@media screen and (max-width: 1024px) {
+	.course {
+		width: 600px;
+	}
+
+	.social-panel {
+		width: 330px;
+	}
+
+	.floating-text {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.course {
+		width: 400px;
+	}
+
+	.social-panel-container {
+		bottom: 60px;
+	}
+
+	.social-panel {
+		width: 280px;
+	}
+
+	.floating-text {
+		width: 250px;
+	}
+
+	.popup-content {
+		width: 250px;
+	}
+}
+
 @media screen and (max-width: 480px) {
+	.course {
+		width: 300px;
+		margin: 10px;
+	}
+
+	.course h2 {
+		font-size: 18px;
+		margin: 8px 0;
+	}
+
+	.course h6 {
+		font-size: 12px;
+	}
+
+	.course-preview {
+		padding: 20px;
+	}
+
+	.course-info {
+		padding: 20px;
+	}
+
+	.progress-container {
+		top: 20px;
+		right: 20px;
+		width: 120px;
+	}
+
+	.progress-text {
+		font-size: 8px;
+	}
+
+	.btn {
+		font-size: 14px;
+		padding: 8px 15px;
+		bottom: 20px;
+		right: 20px;
+	}
 
 	.social-panel-container.visible {
-		transform: translateX(0px);
+		transform: translateX(0);
 	}
-	
+
+	.social-panel {
+		width: 260px;
+		height: 139px;
+	}
+
+	.social-panel h4 {
+		font-size: 12px;
+		margin: 12px 0;
+	}
+
+	.social-panel ul li a {
+		height: 40px;
+		width: 40px;
+	}
+
+	.social-panel p {
+		font-size: 12px;
+	}
+
 	.floating-btn {
+		font-size: 12px;
+		padding: 8px 15px;
+		bottom: 10px;
 		right: 10px;
+	}
+
+	.floating-text {
+		font-size: 10px;
+		padding: 5px 10px;
+	}
+
+	.popup-content {
+		margin: 20% auto;
+		width: 200px;
 	}
 }
 
@@ -282,23 +383,102 @@ body {
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
 	background-color: #fefefe;
 	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 300px;
-  }
-  
-  .popup-content h2 {
+}
+
+.popup-content h2 {
 	margin-top: 0;
-  }
-  
-  .popup-content a {
+}
+
+.popup-content a {
 	display: block;
 	text-align: right;
 	margin-top: 10px;
-  }
-  
+}
+
+
+.glow-on-hover {
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: rgb(2, 54, 78);
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+.glow-on-hover:before {
+	content: '';
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.glow-on-hover:active {
+	color: rgb(2, 54, 78);
+}
+
+.glow-on-hover:active:after {
+	background: transparent;
+}
+
+.glow-on-hover:hover:before {
+	opacity: 1;
+}
+
+.glow-on-hover:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(2, 54, 78);
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}

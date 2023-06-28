@@ -40,7 +40,7 @@ auth.onAuthStateChanged(async function (user) {
             card.innerHTML = `
               <section class="card">
                 <div class="product-image">
-                  <img src="/Images/crciad .png" alt="Cricket" draggable="false" />
+                  <img src="/Images/scoutad.png" alt="Ad" draggable="false" />
                 </div>
                 <div class="product-info">
                 <h2 class="card-title" data-filter="reqSport">Wanted ${scout.reqSport}er</h2>

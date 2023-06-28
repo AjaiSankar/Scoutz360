@@ -101,8 +101,7 @@ body {
 
 /* Club card styles */
 .club-card {
-  background: linear-gradient(90deg, rgba(2,54,78,1) 0%, rgb(13, 176, 138) 73%);
-  background-size: cover;
+  background: linear-gradient(-60deg, #3db3c5, #274685);
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
@@ -126,18 +125,19 @@ body {
 .container {
   /* ...existing styles... */
   display: flex; /* Use flexbox to position the club card and new container side by side */
-  justify-content: space-between; /* Add spacing between the club card and new container */
+ /* Add spacing between the club card and new container */
   align-items: flex-start; /* Align items to the top */
+  justify-content: center;
 }
 
 .container1 {
   /* Styles for the new container */
-  width: 500px; /* Set the width */
+  width: 480px; /* Set the width */
   height: 450px; /* Set the height to match the club card */
   background-color: #5a3d3d; /* Example background color */
   padding: 20px; /* Example padding */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow */
-  flex: 1; /* Allow the new container to take up remaining space */
+   /* Allow the new container to take up remaining space */
   background-color: #f7f7f7; /* Example background color */
   padding: 20px; /* Example padding */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -145,7 +145,8 @@ body {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .row {
@@ -166,7 +167,10 @@ body {
   background-color: #f7f7f7;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  width: 500px;
+  width: 400px;
+  height:70px;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .inner-content {
@@ -176,11 +180,11 @@ body {
   width: 100%;
 }
 
-img {
+img{
   width: 100%;
-  max-width: 200px;
+  max-width: 100px;
   height: auto;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 .styled-button {
@@ -193,6 +197,7 @@ img {
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  width: 200px;
 }
 
 .styled-button:hover {
@@ -206,7 +211,7 @@ img {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .club-details {
@@ -219,54 +224,7 @@ img {
   margin-bottom: 10px;
 }
 
-.club-info {
-  margin-bottom: 10px;
-}
 
-/* Tournaments section styles */
-.tournaments-section {
-  background-color: #f7f7f7;
-  padding: 40px 0;
-  text-align: center; /* Center align the content */
-}
-
-.tournaments-section h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.tournament-card {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.tournament-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.tournament-details {
-  margin-bottom: 20px;
-}
-
-.applied-clubs {
-  margin-bottom: 20px;
-}
-
-.applied-clubs table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.applied-clubs th,
-.applied-clubs td {
-  padding: 8px;
-  border: 1px solid #ccc;
-}
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
@@ -309,29 +267,18 @@ img {
 }
 
 
-.profile-image {
-  width: 160px;
-  height: 160px;
-  margin-right: 20px;
-  overflow: hidden;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align items to the top */
-  justify-content: center;
-  border: 2px solid #fff;
-  background-color: #fff;
-  position: relative; /* Changed from absolute to relative */
-  margin-bottom: 20px; /* Added margin-bottom to create space below */
-}
 
 .profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 167px;
+    height: 148px;
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 71%;
+    max-inline-size: max-content;
 }
+
+
+
 
 .club-details {
   text-align: center;
@@ -350,4 +297,66 @@ img {
   margin-bottom: 10px;
   color: #fff; /* Added text color */
   font-size: 18px; /* Increased font size for better readability */
+  text-align: justify;
+}
+
+.heading{
+  text-align: center;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .club-card,
+  .tournament-card {
+    padding: 10px;
+    width: 100%;
+    margin-right: 0;
+    color: white;
+  }
+
+  .club-card {
+    align-items: center;
+    color: white;
+  }
+
+  .club-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .container1 {
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 0;
+    color: white;
+  }
+  
+  .club-card,
+  .container1 {
+    border-radius: 10px;
+    color: white;
+  }
+
+  .club-details,
+  .club-info {
+    color: #000;
+  }
+
+  .heading {
+    text-align: center;
+  }
+  
+  .profile-image img {
+    width: 167px;
+    height: 148px;
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 71%;
+    max-inline-size: max-content;
+  }
 }

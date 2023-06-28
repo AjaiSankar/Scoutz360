@@ -14,102 +14,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-u/zLJK7qD7Fne9IdMXBnvhcmTNqWmkRYf8OgqgYloKLeP5GQvqhxFqpwODTds2F50BcslrMYIxw+nxlfph63Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <title>Scoutz360-Feed</title>
+  <style>
+     .navbar-custom {
+            margin-top: 0;
+            min-width: -webkit-fill-available;
+            height: 60px;
+            opacity: 80%;
+        }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: relative;
-  z-index: 9999;">
-      <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom">
+    <div class="container-fluid">
         <a class="navbar-brand" href="#">Scoutz360</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Clubs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tournaments</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Academies</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="" data-profile-type="clubs" id="profile-type">My Profile</a>
-              </li>
-          </ul>
-          <span class="navbar-text">
-            <button>Logout</button>
-          </span>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Clubs/ScoutDisplay/scoutad.html">Clubs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Academies/index.html">Academies</a>
+                </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-profile-type="clubs" id="profile-type">My Profile</a>
+        </li>
+            </ul>
+            <span class="navbar-text">
+                <button class="glow-on-hover" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
+            </span>
         </div>
-      </div>
-  </nav>
-
-  
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <h1 class="text-center">Scoutz360 Feed</h1>
-        <div class="clips ml-auto">
-          <a href="./clips/index.html"><button>Clips</button></a>
-        </div>
-      </div>
     </div>
-  </header>
+</nav>
+
 
   
+ 
   
   <div class="add-post-container">
-    <button id="add-post-button" class="glow-on-hover">Add Post</button>
+    <button id="add-post-button" class="glow-on-hover" onclick="location.href='/login/Feed/clips/index.html'">Video Feed</button>
   </div>
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h2>Add Image</h2>
-      <form id="upload-form" class="upload-form">
-        <div class="form-group">
-          <label for="file-upload">
-            <i class="fas fa-cloud-upload-alt"></i>
-            Choose File
-          </label>
-          <input type="file" id="file-upload" name="file-upload" accept="image/*" multiple>
-        </div>
-        <div class="form-group">
-          <label for="caption">
-            <i class="fas fa-comment-alt"></i>
-            Caption
-          </label>
-          <input type="text" id="caption" name="caption" placeholder="Enter caption...">
-        </div>
-        <div class="button-container">
-          <button type="submit">
-            <i class="fas fa-upload"></i>
-            Upload
-          </button>
-        </div>
-      </form>
-      <button id="close-popup" class="close-button">×</button>
-    </div>
-
-  
-  <div class="post-options">
-    <div class="post-option">
-      <div class="post-icon images-medium"></div>
-      <span>Photos</span>
-    </div>
-    <div class="post-option">
-      <div class="post-icon videos-medium"></div>
-      <span>Videos</span>
-    </div>
-    <div class="post-option">
-      <div class="post-icon achievements-medium"></div>
-      <span>Achievements</span>
-    </div>
-  </div>
-</div>
   
   <div class="container">
    
@@ -126,10 +80,10 @@
         <div class="ajai">
           <div class="ad-container">
             <div class="ad-column">
-              <img src="/Images/banner.jpg" alt="Advertisement 1">
+              <img src="/Images/download (4).jpg" alt="Advertisement 1">
             </div>
             <div class="ad-column">
-              <img src="/Images/bg1.jpg" alt="Advertisement 2">
+              <img src="/Images/images.jpg" alt="Advertisement 2">
             </div>
             <div class="ad-column">
               <img src="/Images/banner.jpg" alt="Advertisement 3">
@@ -142,7 +96,7 @@
               <li>You have got the skills?</li>
               <li>We will give opportunities</li>
               <li class="centered-li">
-                <button class="apply-button1">Apply now</button>
+                <button class="apply-button1" onclick="location.href='/Clubs/ScoutDisplay/scoutad.html'">Apply now</button>
               </li>
             </ul>
             
