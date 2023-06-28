@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/login/Feed/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
@@ -52,39 +52,41 @@
         </div>
     </nav>
 
-    
-<div class="container">
-    <div class="text">
-       Apply to Clubs
-    </div>
-    <form action="#">
-       <div class="form-row">
-          <div class="input-data">
-             <input type="text" required>
-             <div class="underline"></div>
-             <label for="">Experience</label>
-          </div>
-          <div class="input-data">
-             <input type="text" required>
-             <div class="underline"></div>
-             <label for="">Confirm Age</label>
-          </div>
-       </div>
-       <div class="form-row">
-       <div class="input-data textarea">
-          <textarea rows="8" cols="80" required></textarea>
-          <br />
-          <div class="underline"></div>
-          <label for="">Write your message to impress the club</label>
-          <br />
-          <div class="form-row submit-btn">
-             <div class="input-data">
-                <div class="inner"></div>
-                <input type="submit" value="submit">
-             </div>
-          </div>
-    </form>
-    </div>
-
+    <div class="container">
+        <div class="text">
+           Apply to Clubs
+        </div>
+        <form id="scoutapplyForm" action="#">
+           <div class="form-row">
+              <div class="input-data">
+                 <input type="text" required name="name">
+                 <div class="underline"></div>
+                 <label for="">Name</label>
+              </div>
+              <div class="input-data">
+                 <input type="text" required name="age">
+                 <div class="underline"></div>
+                 <label for="">Confirm Age</label>
+              </div>
+           </div>
+           <div class="form-row">
+              <div class="input-data textarea">
+                 <textarea rows="8" cols="80" required name="extradata"></textarea>
+                 <br />
+                 <div class="underline"></div>
+                 <label for="">Write your message to impress the club</label>
+              </div>
+           </div>
+           <div class="form-row submit-btn">
+              <div class="input-data">
+                 <div class="inner"></div>
+                 <input type="submit" value="submit">
+              </div>
+           </div>
+        </form>
+        <div id="success-message"></div>
+     </div>
    </body>
+
+   <script type="module" src="firebase.js"></script>
    </html>
