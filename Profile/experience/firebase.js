@@ -39,10 +39,12 @@ auth.onAuthStateChanged(async function (user) {
             }).then(function(docRef) {
                 // Document successfully added
                 console.log('Document written with ID: ', docRef.id);
-
+                alert("Experience Data Inserted Successfully");
+                windows.location.href = "../index.html";
             }).catch(function(error) {
                 // Error adding document
                 console.error('Error adding document: ', error);
+                alert("Error adding document: ", error);
             });
         });
     }
