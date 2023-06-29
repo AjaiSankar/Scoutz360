@@ -14,6 +14,7 @@ import {
   onSnapshot,
   where,
   query,
+  getDocs
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -62,6 +63,21 @@ auth.onAuthStateChanged(async function (user) {
         profileName.innerHTML = `${playerName}<br>${sportPlayed}<br>${playerAge}<br>${pDistrict},${pState}`;
       });
     });
+
+    var form = document.getElementById("AboutData");
+    var aboutTextArea = document.getElementById("about");
+    var aboutParagraph = document.querySelector(".profile-card p");
+
+    // Check if a document already exists for the user in the collection
+    const querySnapshot = await getDocs(
+      query(collection(db, "AboutData"), where("userid", "==", user.uid))
+    );
+    if (!querySnapshot.empty) {
+      // If a document exists, retrieve the data and populate the textarea and paragraph
+      const documentData = querySnapshot.docs[0].data();
+      aboutTextArea.value = documentData.About;
+      aboutParagraph.textContent = documentData.About;
+    }
 
     const ul = document.querySelector(".profile-card ul");
 
