@@ -102,3 +102,17 @@ h1 {
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+.progress {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #4CAF50;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.3s;
+}

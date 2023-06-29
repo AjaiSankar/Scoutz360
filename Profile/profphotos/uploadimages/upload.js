@@ -53,6 +53,8 @@ auth.onAuthStateChanged(async function (user) {
                 })
                 .then(function() {
                     console.log("Image URL saved in database!");
+                    alert("Image Added Successfully!");
+                    window.location.href = "../photos.html";
                 })
                 .catch(function(error) {
                     // Handle any errors that occurred during upload or saving the URL
