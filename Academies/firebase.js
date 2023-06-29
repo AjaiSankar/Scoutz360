@@ -71,7 +71,7 @@ auth.onAuthStateChanged(async function (user) {
             var improveSkillsHeading = document.createElement("h2");
             improveSkillsHeading.textContent = "Improve your skills and get scouted easily.";
   
-            var trainingBatchesHeading = document.createElement("h4");
+            var trainingBatchesHeading = document.createElement("p");
             trainingBatchesHeading.textContent = "Daily and Weekly training batches";
   
   
