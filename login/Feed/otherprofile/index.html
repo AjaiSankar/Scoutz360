@@ -110,10 +110,10 @@
 <!-- ----------------------Profile navbar--------------------------->
   <nav class="profilenavbar">
     <ul class="profilenavbar-menu">
-        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">My Profile</a></li>
+        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">Profile</a></li>
         <li class="profilenavbar-item"><a href="./photo/index.html" class="profilenavbar-link">Photos</a></li>
         <li class="profilenavbar-item"><a href="./video/index.html" class="profilenavbar-link">Videos</a></li>
-        <li class="profilenavbar-item"><a href="./card/index.html" class="profilenavbar-link">My Profile Card</a></li>
+        <!-- <li class="profilenavbar-item"><a href="./card/index.html" class="profilenavbar-link">My Profile Card</a></li> -->
     </ul>
 </nav>
 <!-- ----------------------Profile navbar--------------------------->
@@ -190,6 +190,37 @@
     <script type="module" src="./firebase.js"></script>
     <script type="module" src="./other.js"></script>
     <script type="module" src="/navbar.js"></script>
+    <script>
+      function redirectToPage(pageUrl) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+        
+        // Construct the new URL with the userId parameter
+        const newUrl = `${pageUrl}?userId=${userId}`;
+  
+        // Redirect to the new URL
+        window.location.href = newUrl;
+      }
+      
+      // Function to handle the click event on the links
+      function handleLinkClick(event) {
+        event.preventDefault();
+        
+        // Get the href attribute of the clicked link
+        const pageUrl = event.target.getAttribute('href');
+        
+        // Call the redirectToPage function with the pageUrl
+        redirectToPage(pageUrl);
+      }
+      
+      // Attach the click event listener to the links
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.profilenavbar-link');
+        links.forEach(function(link) {
+          link.addEventListener('click', handleLinkClick);
+        });
+      });
+    </script>
 </body>
 </html
 
