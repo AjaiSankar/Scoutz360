@@ -61,9 +61,9 @@ auth.onAuthStateChanged(async function (user) {
             if (reqId === docId && scout.userid === playerData.userid) {
               card.innerHTML = `
     <div class="card">
-      <img src="${imageURL}" class="card-img-top" alt="${scout.pname} Poster">
+      <img src="${imageURL}" class="card-img-top" alt="${scout.name} Poster">
       <div class="card-body">
-        <h5 class="card-title">${scout.pname}</h5>
+        <h5 class="card-title">${scout.name}</h5>
         <p class="card-text">Age: ${scout.age}</p>
         <p class="card-text">${scout.extradetails}</p>
         <button class="glow-on-hover view-profile-button" data-userid="${playerData.userid}">
