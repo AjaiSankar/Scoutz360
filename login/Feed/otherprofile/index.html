@@ -36,71 +36,37 @@
           </div>
         </div>
     </nav>
+
     <div class="profile-container">
-        <div class="player-details">
-            <button class="edit-button">Edit</button>
-             
-              <div class="upload-popup">
-                <button class="close-button">Close</button>
-                <input type="file" class="upload-input">
-                <button class="upload-button">Upload</button>
-              </div>
-              <div class="profile-name"></div>
-            <div class="profile-image">
-                <img src="" alt="Profile Picture" >
+      <div class="player-details">
+          <button class="edit-button">Edit</button>
+           
+            <div class="upload-popup">
+              <button class="close-button">Close</button>
+              <input type="file" class="upload-input">
+              <button class="upload-button">Upload</button>
             </div>
-        </div>
-    
-    <div class="basic-profile-details">
-      <div class="detail">
-          <span class="label">Professional Cricketer</span>
+            <div class="profile-name"></div>
+          <div class="profile-image">
+              <img src="" alt="Profile Picture" >
+          </div>
       </div>
-      <div class="detail">
-          <span class="label">Age : 22</span>
-      </div>
-      <div class="detail">
-          <span class="label">Kottayam,Kerala,India</span>
-  
-      </div>
-      <!-- Add more details as needed -->
-  </div>
-
-  <div class="buttons-container">
-   
-    <button class="contact-info-button">Contact Info</button>
-    <div class="player-position">Batting Allrounder</div>
-    <button class="player-skills-button">Player Skills</button>
-  </div>
-  
+      
   
 
-  <div class="popup contact-info-popup">
-    <h2 class="popup-title">Ajai Sankar Hareesh</h2>
-    <div class="underline"></div>
-    <div class="popup-content">
-      <div class="contact-info-item">
-        <svg class="contact-info-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="#F44336" d="M21.3 3H2.7C1.04 3 0 4.04 0 5.7v12.6C0 19.96 1.04 21 2.7 21h18.6c1.66 0 2.7-1.04 2.7-2.7V5.7C24 4.04 22.96 3 21.3 3zm0 14.3H2.7V7.04l9.3 5.8 9.3-5.8V17.3zm0-12.58L12 10.3 2.7 4.72V5.7L12 11l9.3-5.3v-.98zM2.7 5.7v.98L12 10.3l9.3-3.62v-.98H2.7z"/>
-        </svg>
-        <span class="contact-label">Email:</span>
-        <span class="contact-value">ajaisankar@gmail.com</span>
-      </div>
-      <div class="contact-info-item">
-        <img class="contact-info-icon" src="/Images/phone.png" alt="Phone Icon" width="24" height="24">
-        <span class="contact-label">Phone:</span>
-        <span class="contact-value">9995625369</span>
-        <div class="contact-info-value"></div>
-      </div>
-      <div class="contact-info-item">
-        <img class="contact-info-icon" src="/Images/25530.jpg" alt="Place Icon" width="24" height="24">
-        <span class="contact-label">Place:</span>
-        <span class="contact-value">Kottayam</span>
-        <div class="contact-info-value"></div>
-      </div>
-    </div>
-    <button class="close-popup">Close</button>
-  </div>
+<div class="buttons-container">
+ 
+  <button class="contact-info-button">Contact Info</button>
+  <div class="player-position">Batting Allrounder</div>
+  <button class="player-skills-button">Player Skills</button>
+</div>
 
+<div class="popup contact-info-popup">
+  <div class="popup-content">
+      <!-- Content goes here -->
+  </div>
+  <button class="close-popup">Close</button>
+</div>
 
   <div class="popup player-skills-popup">
     <h2>Skills</h2>
@@ -144,10 +110,10 @@
 <!-- ----------------------Profile navbar--------------------------->
   <nav class="profilenavbar">
     <ul class="profilenavbar-menu">
-        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">My Profile</a></li>
-        <li class="profilenavbar-item"><a href="./profphotos/photos.html" class="profilenavbar-link">Photos</a></li>
-        <li class="profilenavbar-item"><a href="./profvideos/videos.html" class="profilenavbar-link">Videos</a></li>
-        <li class="profilenavbar-item"><a href="./profcards/profilecard.html" class="profilenavbar-link">My Profile Card</a></li>
+        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">Profile</a></li>
+        <li class="profilenavbar-item"><a href="./photo/index.html" class="profilenavbar-link">Photos</a></li>
+        <li class="profilenavbar-item"><a href="./video/index.html" class="profilenavbar-link">Videos</a></li>
+        <!-- <li class="profilenavbar-item"><a href="./card/index.html" class="profilenavbar-link">My Profile Card</a></li> -->
     </ul>
 </nav>
 <!-- ----------------------Profile navbar--------------------------->
@@ -156,13 +122,12 @@
 <div class="profile-card">
   <div class="edit-icon">
       <span class="edit-icon-wrapper">
-        
-          <h2>About</h2>
-          
-    <br><br>
-    
+          <h2>About</h2>   
+          <button class="extra-button" id="about" onclick="window.location.href='/Profile/about/index.html'" hidden>Edit About</button>       
+      </span>
+      <br><br>
   </div>
-  <p>A passionate football defender with the vision of keeping opponents away from the goal</p>
+  <p></p>
 </div>
 
 <div class="profile-card">
@@ -223,6 +188,39 @@
         
     </script>
     <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./other.js"></script>
+    <script type="module" src="/navbar.js"></script>
+    <script>
+      function redirectToPage(pageUrl) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+        
+        // Construct the new URL with the userId parameter
+        const newUrl = `${pageUrl}?userId=${userId}`;
+  
+        // Redirect to the new URL
+        window.location.href = newUrl;
+      }
+      
+      // Function to handle the click event on the links
+      function handleLinkClick(event) {
+        event.preventDefault();
+        
+        // Get the href attribute of the clicked link
+        const pageUrl = event.target.getAttribute('href');
+        
+        // Call the redirectToPage function with the pageUrl
+        redirectToPage(pageUrl);
+      }
+      
+      // Attach the click event listener to the links
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.profilenavbar-link');
+        links.forEach(function(link) {
+          link.addEventListener('click', handleLinkClick);
+        });
+      });
+    </script>
 </body>
 </html
 
