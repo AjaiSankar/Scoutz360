@@ -1,0 +1,278 @@
+body{
+  background: linear-gradient(-86deg, #3db3c5, #274685);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+  
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px) brightness(90%);
+  width: 300px;
+  text-align: center;
+  color: white;
+  line-height: 15px;
+}
+
+.p{
+  font-weight:bold ;
+}
+  
+  .card-blue {
+    background-color: #c0e1ff;
+  }
+  
+  .product-image img {
+    width: 75%;
+    height: 20%;
+    align-items: center;
+  }
+  
+  .product-info {
+    margin-top: 20px;
+  }
+  
+  .card-title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .buy-btn {
+    padding: 10px 20px;
+    background-color: #274685;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .buy-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --dark-color-lighten: #f2f5ff;
+  --red-card: #a62121;
+  --blue-card: #4bb7e6;
+  --btn: #141414;
+  --btn-hover: #3a3a3a;
+  --text: #fbf7f7;
+}
+
+/*===== RESET =====*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-color-lighten);
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+  .svg {
+    height: 25px;
+    width: 25px;
+    fill: #fff;
+    transition: all 500ms ease;
+  }
+  
+  .fav:hover .svg {
+    fill: #000;
+  }
+  
+  @media screen and (max-width: 800px) {
+      .container {
+        width: 100%;
+        padding: 2rem 1rem; /* Adjust padding */
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  
+    .filter-container {
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .filter-container h1{
+      align-items: center;
+
+    }
+    
+    .filter-container ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1rem;
+    }
+    
+    .filter-container li {
+      font-size: 0.9rem;
+    }
+    
+    .filter-container label {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    
+    .filter-container select {
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.3rem;
+      border: 1px solid #ccc;
+    }
+    
+    .apply-btn {
+      background-color: #4bb7e6;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+
+    
+.glow-on-hover {
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: rgb(2, 54, 78);
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+.glow-on-hover:before {
+	content: '';
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.glow-on-hover:active {
+	color: rgb(2, 54, 78);
+}
+
+.glow-on-hover:active:after {
+	background: transparent;
+}
+
+.glow-on-hover:hover:before {
+	opacity: 1;
+}
+
+.glow-on-hover:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(2, 54, 78);
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}

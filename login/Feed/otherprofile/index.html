@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="/Profile/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Scoutz360</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Clubs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tournaments</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Academies</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <button>Login</button>
+            </span>
+          </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+      <div class="player-details">
+          <button class="edit-button">Edit</button>
+           
+            <div class="upload-popup">
+              <button class="close-button">Close</button>
+              <input type="file" class="upload-input">
+              <button class="upload-button">Upload</button>
+            </div>
+            <div class="profile-name"></div>
+          <div class="profile-image">
+              <img src="" alt="Profile Picture" >
+          </div>
+      </div>
+      
+  
+
+<div class="buttons-container">
+ 
+  <button class="contact-info-button">Contact Info</button>
+  <div class="player-position">Batting Allrounder</div>
+  <button class="player-skills-button">Player Skills</button>
+</div>
+
+<div class="popup contact-info-popup">
+  <div class="popup-content">
+      <!-- Content goes here -->
+  </div>
+  <button class="close-popup">Close</button>
+</div>
+
+  <div class="popup player-skills-popup">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 1">
+        <div class="skill-label">Skill 1</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      <div class="skill-item">
+        <img class="skill-icon" src="/Images/25477.jpg" alt="Skill 2">
+        <div class="skill-label">Skill 2</div>
+      </div>
+      
+      <!-- Add more skill items as needed -->
+    </div>
+    <div class="add-skill-form" style="display: none;">
+      <h3>Add New Skill</h3>
+      <input type="text" class="add-skill-input" placeholder="Enter a new skill">
+      <button class="add-skill-button">Add</button>
+      <button class="cancel-skill-button">Cancel</button>
+    </div>
+  
+    <button class="add-skill-button">Add More Skills</button>
+    <button class="close-popup">Close</button>
+  </div>
+
+
+  <br><br>
+<!-- ----------------------Profile navbar--------------------------->
+  <nav class="profilenavbar">
+    <ul class="profilenavbar-menu">
+        <li class="profilenavbar-item"><a href="./index.html" class="profilenavbar-link">My Profile</a></li>
+        <li class="profilenavbar-item"><a href="./photo/index.html" class="profilenavbar-link">Photos</a></li>
+        <li class="profilenavbar-item"><a href="./video/index.html" class="profilenavbar-link">Videos</a></li>
+        <li class="profilenavbar-item"><a href="./card/index.html" class="profilenavbar-link">My Profile Card</a></li>
+    </ul>
+</nav>
+<!-- ----------------------Profile navbar--------------------------->
+<br>
+
+<div class="profile-card">
+  <div class="edit-icon">
+      <span class="edit-icon-wrapper">
+          <h2>About</h2>   
+          <button class="extra-button" id="about" onclick="window.location.href='/Profile/about/index.html'" hidden>Edit About</button>       
+      </span>
+      <br><br>
+  </div>
+  <p></p>
+</div>
+
+<div class="profile-card">
+    <h2>Experience</h2>
+    <br><br>
+    <ul>
+        
+    </ul>
+</div>
+<div class="profile-card">
+    <h2>Achievements</h2>
+    <br><br>
+    <div class="container">
+    </div>
+</div>
+        
+    </div>
+
+    <div class="chat-button">Chat</div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>Chat</span>
+            <span class="chat-close">X</span>
+        </div>
+        <div class="chat-conversations">
+            <div class="chat-conversation">
+                <p class="chat-person">Person 1</p>
+                <p class="chat-message">Chat message 1</p>
+            </div>
+            <div class="chat-conversation">
+                <p class="chat-person">Person 2</p>
+                <p class="chat-message">Chat message 2</p>
+            </div>
+            <!-- Add more chat conversations here -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="Type your message...">
+            <button class="chat-submit">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Chat functionality here
+
+        const chatButton = document.querySelector('.chat-button');
+        const chatContainer = document.querySelector('.chat-container');
+        const chatClose = document.querySelector('.chat-close');
+
+        // Open chat container when chat button is clicked
+        chatButton.addEventListener('click', () => {
+            chatContainer.style.display = 'block';
+        });
+
+        // Close chat container when close button is clicked
+        chatClose.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+        });
+        
+    </script>
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./other.js"></script>
+    <script type="module" src="/navbar.js"></script>
+</body>
+</html
+

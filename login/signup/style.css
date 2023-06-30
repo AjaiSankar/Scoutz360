@@ -6,8 +6,8 @@ html {
     display: flex;
     align-items: center;
     font-family: Arial, sans-serif;
-    background: rgb(2,54,78);
-  background: linear-gradient(90deg, rgba(2,54,78,1) 0%, rgb(13, 176, 138) 73%);
+  background: linear-gradient(-45deg, #3db3c5, #274685);
+  flex-direction: column;
   }
   
   .container {

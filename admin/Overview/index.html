@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="mainc">
+    <h1>Profile Overview</h1>
+
+    <div class="pr">
+      <canvas id="profilesChart"></canvas>
+    </div>
+
+    <h1>Tournament Overview</h1>
+    <div class="pr">
+      <canvas id="tournamentsChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Sample data for demonstration purposes
+    const profileData = {
+      labels: ["Players", "Clubs", "Academies"],
+      datasets: [
+        {
+          label: "Profiles",
+          data: [0, 0, 0], // Placeholder initial data
+          backgroundColor: [
+            "rgba(75, 192, 192, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+          ],
+        },
+      ],
+    };
+
+    const tournamentsData = {
+      labels: ["Hosted", "Applicants"],
+      datasets: [
+        {
+          label: "Tournaments",
+          data: [0, 0], // Placeholder initial data
+          backgroundColor: [
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+          ],
+        },
+      ],
+    };
+
+    // Create the charts
+    const profilesChart = new Chart(document.getElementById("profilesChart"), {
+      type: "pie",
+      data: profileData,
+    });
+
+    const tournamentsChart = new Chart(document.getElementById("tournamentsChart"), {
+      type: "bar",
+      data: tournamentsData,
+    });
+  </script>
+  <script type="module" src="./firebase.js"></script>
+</body>
+</html>

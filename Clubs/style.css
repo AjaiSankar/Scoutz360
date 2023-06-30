@@ -1,0 +1,362 @@
+
+
+/*----------------------Button Start-------------------*/
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #00133E;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  
+  
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #00133E;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00133E;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/*----------------------Button Ends-------------------*/
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and general styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+}
+
+
+/* Club card styles */
+.club-card {
+  background: linear-gradient(-60deg, #3db3c5, #274685);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  border-radius: 20px;
+  height: 450px;
+  width: 400px;
+  color: #f5f5f5;
+  text-decoration: wavy;
+  position: relative;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-top: 3%;
+  margin-right: 20px;
+}
+
+.container {
+  /* ...existing styles... */
+  display: flex; /* Use flexbox to position the club card and new container side by side */
+ /* Add spacing between the club card and new container */
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+}
+
+.container1 {
+  /* Styles for the new container */
+  width: 480px; /* Set the width */
+  height: 450px; /* Set the height to match the club card */
+  background-color: #5a3d3d; /* Example background color */
+  padding: 20px; /* Example padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow */
+   /* Allow the new container to take up remaining space */
+  background-color: #f7f7f7; /* Example background color */
+  padding: 20px; /* Example padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 3%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.column {
+  width: 100%;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 400px;
+  height:70px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.inner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+img{
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin-right: 0px;
+}
+
+.styled-button {
+  padding: 10px 20px;
+  background-color: #00133E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+
+.styled-button:hover {
+  background-color: #23527c;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.club-details {
+  text-align: center;
+}
+
+.club-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .club-card,
+  .tournament-card {
+    padding: 10px;
+  }
+
+  .club-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    
+  }
+
+  .club-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.application-button {
+  padding: 10px 20px;
+  background-color: #00133E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.application-button:hover {
+  background-color: #23527c;
+}
+
+
+
+.profile-image img {
+  width: 167px;
+    height: 148px;
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 71%;
+    max-inline-size: max-content;
+}
+
+
+
+
+.club-details {
+  text-align: center;
+  position: relative; /* Added position relative for z-index */
+  z-index: 1; /* Added z-index to position text above the profile image */
+}
+
+.club-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff; /* Added text color */
+}
+
+.club-info {
+  margin-bottom: 10px;
+  color: #fff; /* Added text color */
+  font-size: 18px; /* Increased font size for better readability */
+  text-align: justify;
+}
+
+.heading{
+  text-align: center;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .club-card,
+  .tournament-card {
+    padding: 10px;
+    width: 100%;
+    margin-right: 0;
+    color: white;
+  }
+
+  .club-card {
+    align-items: center;
+    color: white;
+  }
+
+  .club-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .container1 {
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 0;
+    color: white;
+  }
+  
+  .club-card,
+  .container1 {
+    border-radius: 10px;
+    color: white;
+  }
+
+  .club-details,
+  .club-info {
+    color: #000;
+  }
+
+  .heading {
+    text-align: center;
+  }
+  
+  .profile-image img {
+    width: 167px;
+    height: 148px;
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 71%;
+    max-inline-size: max-content;
+  }
+}

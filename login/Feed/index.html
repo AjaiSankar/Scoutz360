@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-u/zLJK7qD7Fne9IdMXBnvhcmTNqWmkRYf8OgqgYloKLeP5GQvqhxFqpwODTds2F50BcslrMYIxw+nxlfph63Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="./style.css" rel="stylesheet">
   <title>Scoutz360-Feed</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-    }
-    
-    .post {
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    
-    .post img {
-      max-width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    .post video {
-      max-width: 100%;
-    }
+     .navbar-custom {
+            margin-top: 0;
+            min-width: -webkit-fill-available;
+            height: 60px;
+            opacity: 80%;
+        }
   </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: relative;
-    z-index: 9999;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Scoutz360</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Scoutz360</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Clubs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Academies</a>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/login/Feed/index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../Profile/index.html">My Profile</a>
+                    <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Clubs/ScoutDisplay/scoutad.html">Clubs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Academies/index.html">Academies</a>
+                </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-profile-type="clubs" id="profile-type">My Profile</a>
+        
+        </li>
             </ul>
             <span class="navbar-text">
-              <button>Logout</button>
+                <button class="glow-on-hover" id="logout" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
             </span>
-          </div>
         </div>
-    </nav>
-  <header>
-    <h1>Scoutz360 Feed</h1>
-  </header>
+    </div>
+</nav>
+
+
   
+ 
+  
+  <div class="add-post-container">
+    <button id="add-post-button" class="glow-on-hover" onclick="location.href='/login/Feed/clips/index.html'">Video Feed</button>
+  </div>
+  
+  <div class="container">
+   
+    <div class="row">
+      
+      <div class="col-lg-8">
+       
+        <div id="image-container" class="row">
+          <!-- Images and captions will be dynamically added here -->
+        </div>
+
+      </div>
+      <div class="sidecard">
+        <div class="ajai">
+          <div class="ad-container">
+            <div class="ad-column">
+              <img src="/Images/download (4).jpg" alt="Advertisement 1">
+            </div>
+            <div class="ad-column">
+              <img src="/Images/images.jpg" alt="Advertisement 2">
+            </div>
+            <div class="ad-column">
+              <img src="/Images/banner.jpg" alt="Advertisement 3">
+            </div>
+          </div>
+
+          <div class="top-clubs-container">
+            <h3>Hey You!</h3>
+            <ul class="club-list">
+              <li>You have got the skills?</li>
+              <li>We will give opportunities</li>
+              <li class="centered-li">
+                <button class="apply-button1" onclick="location.href='/Clubs/ScoutDisplay/scoutad.html'">Apply now</button>
+              </li>
+            </ul>
+            
+          </div>
+      </div>
+    </div>     
   <main>
-    <div class="post">
-      <h2>Ajai</h2>
-      <img src="/Images/playerimg1.jpg" alt="Player A">
-      <p>Playing for Kerala in Under 23 Football 7s Championship hld at Trivandum</p>
-    </div>
     
-    <div class="post">
-      <h2>Vivek</h2>
-      <video controls>
-        <source src="/Images/playing1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p>Playing for Tigers football club in national football Tournament</p>
-    </div>
-    
-    <div class="post">
-      <h2>Ronaldo</h2>
-      <img src="/Images/playerimg1.jpg" alt="Player C">
-      <p>Under 20 Footbal Championship @ Brazil</p>
-    </div>
   </main>
+  
+  
+  
+ 
+
+
 </body>
 <script type="module" src="./firebase.js"></script>
+<script type="module" src="../../navbar.js"></script>
+<script type="module" src="./popinsert.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>

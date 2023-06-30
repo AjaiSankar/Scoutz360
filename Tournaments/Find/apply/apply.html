@@ -14,109 +14,50 @@
     <title>Club Application</title>
     <link href="/Tournaments/Find/apply/stylesapply.css" rel="stylesheet">
     <style>
-        body {
-            background-image: url('/Images/bg1.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        
-        .form-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-container img {
-            width: 200px;
-            height: auto;
-            margin-right: 20px;
-        }
-        
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-container label {
-            margin-bottom: 10px;
-        }
-        
-        .form-container input,
-        .form-container textarea {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .success-message {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            border-radius: 5px;
-        }
+     
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: relative;
-    z-index: 9999;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Scoutz360</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Clubs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Tournaments</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Academies</a>
-                </li>
-            </ul>
-            <span class="navbar-text">
-              <button>Login</button>
-            </span>
-          </div>
+            <a class="navbar-brand" href="#">Scoutz360</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login/Feed/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Tournaments/index.html">Tournaments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Clubs/ScoutDisplay/scoutad.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Academies/index.html">Academies</a>
+                    </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" data-profile-type="clubs" id="profile-type">My Profile</a>
+            </li>
+                </ul>
+                <span class="navbar-text">
+                    <button class="glow-on-hover" id="logout" style="width: 70px; border-radius: 70%; height: 30px;">Logout</button>
+                </span>
+            </div>
         </div>
     </nav>
 
     <!-------------------------------------Form Starts--------------------------------------------------------->
     <div class="container">
         <div class="form-container">
-            <img src="Images/Crick.jpg" alt="Cricket" />
+            <img src="/Images/crciad .png" alt="Cricket" />
             <form id="club-application-form">
                 <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                background: linear-gradient(to right, Green,Blue);
+                background: linear-gradient(-45deg, #3db3c5, #274685);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;">
                     Tournament Application</h1>
@@ -135,58 +76,11 @@
                 
                 <button type="submit">Submit</button>
             </form>
-            <img src="Images/3631.jpg" alt="Football" />
+            <img src="/Images/footad.png" alt="Football" />
         </div>
         <div class="success-message" id="success-message"></div>
     </div>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyDIh1tbO5WYQOsC5J0eCT3gMLqf9TA5M8Q",
-  authDomain: "scoutz360demo.firebaseapp.com",
-  projectId: "scoutz360demo",
-  storageBucket: "scoutz360demo.appspot.com",
-  messagingSenderId: "537849473274",
-  appId: "1:537849473274:web:6cc282b1f3dc66f1894143",
-  measurementId: "G-NQ601C7WBT"
-        };
-        
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        const form = document.getElementById('club-application-form');
-        const successMessage = document.getElementById('success-message');
-        
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            
-            const clubName = form['club-name'].value;
-            const place = form['place'].value;
-            const captainName = form['captain-name'].value;
-            const contactDetails = form['contact-details'].value;
-            
-            try {
-                const docRef = await addDoc(collection(db, 'clubApplications'), {
-                    clubName,
-                    place,
-                    captainName,
-                    contactDetails
-                });
-                console.log('Document written with ID: ', docRef.id);
-                
-                // Display success message
-                successMessage.style.display = 'block';
-                successMessage.innerText = 'Application submitted. Good luck with the tournament!';
-                
-                // Reset form
-                form.reset();
-            } catch (error) {
-                console.error('Error adding document: ', error);
-            }
-        });
-    </script>
 </body>
+<script type="module" src="./firebase.js"></script>
+<script type="module" src="/navbar.js"></script>
 </html>
