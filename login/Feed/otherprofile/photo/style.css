@@ -1,0 +1,707 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .upload-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .upload-button-style {
+    padding: 10px 20px;
+    background-color: #002E5A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-button-style:hover {
+    background-color: #45a049;
+  }
+
+.videos-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    
+}
+
+.video-card {
+    margin-bottom: 20px;
+    border: 1px solid #007bff;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+    
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.caption {
+    position: relative; /* Add this line */
+    padding: 10px;
+    background-color: #f5f5f5;
+    z-index: 1; /* Add this line */
+  }
+  
+
+.caption h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.caption p {
+    margin: 5px 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+  background: linear-gradient(-45deg, #3db3c5, #274685);
+  color: #FFF;
+  padding: 5px;
+  text-align: center;
+}
+
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white; /* Add white border to the image frame */
+    box-sizing: content-box; /* Adjust box-sizing to include the border within the dimensions */
+  }
+  
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 767px) {
+    /* Adjustments for smaller screens */
+    .profile-image {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    /* Adjustments for even smaller screens */
+    .profile-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  .player-details {
+    background-image: url("/Images/bgprifile.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-content: center;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(90%);
+    border-radius: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    /* Adjustments for smaller screens */
+    .player-details {
+      margin-left: 0;
+      margin-top: 10px; /* Add top margin for spacing */
+    }
+  }
+  
+
+.profile-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: whitesmoke;
+}
+.profile-card {
+    background-color: #F2F2F2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.video-card {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    flex: 70%;
+}
+
+.caption {
+    flex: 30%;
+    padding: 10px;
+    background-color: #FFF;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #00133E;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.extra-button {
+  padding: 6px 12px; /* Decrease the padding to reduce button size */
+  background-color: #00133E;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px; /* Adjust the font size as needed */
+}
+
+
+.chat-container {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.chat-header {
+    background-color: #00133E;
+    color: #FFF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-close {
+    cursor: pointer;
+}
+
+.chat-conversations {
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.chat-person {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-input {
+    flex: 80%;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.chat-submit {
+    flex: 20%;
+    padding: 5px;
+    background-color: #00133E;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profilenavbar {
+  background: linear-gradient(-45deg, #3db3c5, #274685); /* Replace with your desired gradient colors */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilenavbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.profilenavbar-item {
+  margin-right: 20px;
+}
+
+.profilenavbar-item:last-child {
+  margin-right: 0;
+}
+
+.profilenavbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.profilenavbar-link:hover {
+  color: #f5f5f5;
+}
+
+.profilenavbar-item:hover {
+  transform: scale(1.1); /* Add a scale effect on hover */
+}
+
+
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-card {
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #000; /* Add border properties */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Add box shadow for a subtle effect */
+  width: calc(100% - 40px); /* Set width to occupy 50% of the parent container minus margins */
+  background-color: white;
+}
+
+.photo-card .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+}
+
+.photo-card .photo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /*Player bacground edit*/
+
+  .edit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+    border-radius: 4px;
+  }
+  
+  .player-details {
+    position: relative;
+
+  }
+  
+  .upload-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .upload-input {
+    margin-bottom: 10px;
+  }
+  
+  .upload-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  /*Profile container*/
+  
+  .basic-profile-details {
+    text-align: center; /* Center the text within the container */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Stack the details vertically */
+    align-items: center; /* Center align the details horizontally */
+  }  
+  .basic-profile-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .basic-profile-details .detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .basic-profile-details .label {
+    font-weight: bold;
+  }
+  
+  .basic-profile-details .value {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  /*Player contact and skill button*/
+  .basic-profile-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .basic-profile-details .detail {
+    margin-bottom: 10px;
+  }
+  
+ 
+  
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup .close-popup {
+    margin-top: 10px;
+  }
+  
+  .buttons-container .contact-info-button,
+  .buttons-container .player-skills-button {
+    background-color: rgba(2, 54, 78, 1);
+    background-image: linear-gradient(-45deg, #3db3c5, #274685);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .buttons-container .contact-info-button:hover,
+  .buttons-container .player-skills-button:hover {
+    opacity: 0.9;
+  }
+  
+  .buttons-container .contact-info-button {
+    order: 1;
+    margin-right: 10px;
+  }
+  
+  .buttons-container .player-skills-button {
+    order: 2;
+    margin-left: 10px;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .player-position {
+    background-color: #002E5A;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    order: 1;
+    margin: 0 10px;
+  }
+
+  .popup.contact-info-popup {
+    /* Add your desired styles for the popup container */
+  }
+  
+  .popup-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .underline {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 10px;
+  }
+  
+  .popup-content {
+    /* Add your desired styles for the popup content */
+  }
+  
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .contact-label {
+    font-weight: bold;
+  }
+  
+  .contact-value {
+    /* Add your desired styles for the contact value */
+  }
+  
+  .close-popup {
+    background-color: #002E5A;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .close-popup:hover {
+    background-color: #001625;
+  }
+  
+
+  /*Skill popup*/
+  .player-skills-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto;
+    max-height: 80vh;
+    text-align: center;
+  }
+  
+  .player-skills-popup h2 {
+    margin-bottom: 20px;
+  }
+  
+  .skills-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust the margin as needed */
+  }
+  
+  .skill-icon {
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
+  
+  .skill-label {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
+  
+  .add-skill-button {
+    background-color: #002E5A;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-skill-button:hover {
+    background-color: #0288D1;
+  }
+  
+  
+  
+ 
+.glow-on-hover {
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: rgb(2, 54, 78);
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+.glow-on-hover:before {
+	content: '';
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.glow-on-hover:active {
+	color: rgb(2, 54, 78);
+}
+
+.glow-on-hover:active:after {
+	background: transparent;
+}
+
+.glow-on-hover:hover:before {
+	opacity: 1;
+}
+
+.glow-on-hover:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(2, 54, 78);
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}
