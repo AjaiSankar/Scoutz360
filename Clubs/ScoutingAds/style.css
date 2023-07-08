@@ -6,7 +6,9 @@
   }
 
   
-  
+body{
+  background: linear-gradient(90deg, rgba(2,54,78,1) 0%, rgb(13, 176, 138) 73%);
+}
   .scouting-section h2 {
     font-size: 28px;
     font-weight: bold;
