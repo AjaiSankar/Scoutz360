@@ -3,14 +3,14 @@ const chatContainer = document.querySelector(".chat-container");
 const chatClose = document.querySelector(".chat-close");
 
 // Open chat container when chat button is clicked
-chatButton.addEventListener("click", () => {
-  chatContainer.style.display = "block";
-});
+// chatButton.addEventListener("click", () => {
+//   chatContainer.style.display = "block";
+// });
 
 // Close chat container when close button is clicked
-chatClose.addEventListener("click", () => {
-  chatContainer.style.display = "none";
-});
+// chatClose.addEventListener("click", () => {
+//   chatContainer.style.display = "none";
+// });
 
 // const editButton = document.querySelector(".edit-button");
 // const closeButton = document.querySelector(".close-button");
