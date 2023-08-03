@@ -54,14 +54,11 @@
 
     <header style="text-align: center; margin-top: 2%;">
       <h2 style="color: azure;">Scouting Advertisements</h2>
-        <div class="filter-container">
-          <nav class="filters">
-            <ul>
-              <li><label><input type="radio" name="filter" class="filter" data-filter="Cricket"> Cricket</label></li>
-              <li><label><input type="radio" name="filter" class="filter" data-filter="Football"> Football</label></li> 
-            </ul>
-          </nav>
-        </div>
+      <div class="btn-group mb-3" role="group">
+        <button type="button" class="btn btn-primary filter-button" data-filter="all">All</button>
+        <button type="button" class="btn btn-primary filter-button" data-filter="cricket">Cricket</button>
+        <button type="button" class="btn btn-primary filter-button" data-filter="football">Football</button>
+      </div>
       </header>
 
     <main class="container">
