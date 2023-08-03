@@ -1,29 +1,3 @@
-const chatButton = document.querySelector(".chat-button");
-const chatContainer = document.querySelector(".chat-container");
-const chatClose = document.querySelector(".chat-close");
-
-// Open chat container when chat button is clicked
-// chatButton.addEventListener("click", () => {
-//   chatContainer.style.display = "block";
-// });
-
-// Close chat container when close button is clicked
-// chatClose.addEventListener("click", () => {
-//   chatContainer.style.display = "none";
-// });
-
-// const editButton = document.querySelector(".edit-button");
-// const closeButton = document.querySelector(".close-button");
-// const uploadPopup = document.querySelector(".upload-popup");
-
-// editButton.addEventListener("click", () => {
-//   uploadPopup.style.display = "block";
-// });
-
-// closeButton.addEventListener("click", () => {
-//   uploadPopup.style.display = "none";
-// });
-
 /*Player contact and skill pop up*/
 document.addEventListener("DOMContentLoaded", function () {
   const contactInfoButton = document.querySelector(".contact-info-button");
